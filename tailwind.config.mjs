@@ -72,6 +72,8 @@ export default {
       accent08: "hsla(51, 29%, 27%, 1)",
       accent09: "hsla(50, 29%, 19%, 1)",
       accent10: "hsla(49, 29%, 12%, 1)",
+
+      transparent: "transparent",
     },
     padding: {
       s: "0.5rem",
