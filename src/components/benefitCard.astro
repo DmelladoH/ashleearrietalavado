@@ -1,0 +1,21 @@
+---
+import H3 from "./h3.astro";
+
+const { title, text } = Astro.props;
+---
+
+<div>
+  <div class="flex gap-s">
+    <div class="min-h-10 min-w-10">
+      <slot />
+    </div>
+    <div>
+      <H3>
+        {title}
+      </H3>
+      <p class="leading-body mt-2">
+        {text}
+      </p>
+    </div>
+  </div>
+</div>
