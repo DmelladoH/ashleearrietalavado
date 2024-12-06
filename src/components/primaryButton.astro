@@ -1,0 +1,11 @@
+---
+const { ...props } = Astro.props;
+---
+
+<button
+  {...props}
+  class="bg-action05 py-m px-l text-white rounded-rounded flex gap-s justify-center align-middle"
+>
+  <slot name="icon" />
+  <slot name="text" />
+</button>
