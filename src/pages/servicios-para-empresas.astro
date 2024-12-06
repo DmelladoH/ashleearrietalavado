@@ -1,16 +1,16 @@
 ---
-import WhatsappContactButton from "@components/whatsappContactButton.astro";
+import H2 from "@components/h2.astro";
+import H3 from "@components/h3.astro";
+import Contact from "@sections/contact.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
 
 <Layout>
   <section class="pt-xxxl px-l grid gap-s mb-24">
-    <h2 class="text-h2 font-bold leading-h2">
-      Servicios para Empresas y Centros Educativos
-    </h2>
-    <h3 class="text-h3 font-bold leading-h3">
+    <H2> Servicios para Empresas y Centros Educativos </H2>
+    <H3>
       Charlas y dinámicas para impulsar el bienestar y la cohesión en tu equipo.
-    </h3>
+    </H3>
     <p class="leading-body">
       Trabajo con Centros Educativos, Centros de Integración Social, Empresas y
       asociaciones. Me adapto a las necesidades de tu equipo, ayudándoos a
@@ -21,15 +21,8 @@ import Layout from "src/layouts/Layout.astro";
       manera más óptima de crecer juntos/as.
     </p>
   </section>
-  <section class="bg-neutral02 py-xl px-l">
-    <h3 class="text-h3 font-bold leading-h3 text-center mb-4">
-      ¿Te gustaría saber más sobre cómo podemos colaborar?
-    </h3>
-    <p class="leading-body text-center mb-8">
-      ¡Me adapto a vuestras necesidades! Cuéntame vuestra situación.
-    </p>
-    <div class="w-full">
-      <WhatsappContactButton />
-    </div>
-  </section>
+  <Contact
+    title="¿Te gustaría saber más sobre cómo podemos colaborar?"
+    text="¡Me adapto a vuestras necesidades! Cuéntame vuestra situación."
+  />
 </Layout>
