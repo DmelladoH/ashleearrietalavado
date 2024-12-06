@@ -1,0 +1,41 @@
+---
+import PrimaryButton from "@components/primaryButton.astro";
+import Bars3 from "@icons/bars3.astro";
+import LogoWithTitle from "@icons/logoWithTitle.astro";
+import Whatsapp from "@icons/whatsapp.astro";
+---
+
+<header class="bg-white py-l px-l justify-between flex">
+  <div class="w-28 h-12">
+    <LogoWithTitle />
+  </div>
+
+  <nav class="bg-white">
+    <ul>
+      <li>
+        <a href="/">Página principal</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="/terapias">Terapias</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="/servicios-para-empresas">Servicios para empresas</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- <PrimaryButton>
+    <div slot="icon" class="w-6 h-6">
+      <Whatsapp />
+    </div>
+    <span slot="text" class="font-medium">Contactar</span>
+  </PrimaryButton> -->
+  <!-- <button class="">
+    <div class="w-10 h-10">
+      <Bars3 />
+    </div>
+  </button> -->
+</header>

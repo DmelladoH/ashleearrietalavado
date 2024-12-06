@@ -1,3 +1,8 @@
+---
+import Footer from "@sections/footer.astro";
+import Header from "@sections/header.astro";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,16 +18,37 @@
     />
     <title>Ashlee Arrieta Lavado</title>
   </head>
-  <body>
-    <slot />
+  <body class="bg-white text-main09">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
 
-<style>
+<style is:global>
   html,
   body {
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+  span {
+    font-weight: 700;
+  }
+
+  p {
+    line-height: 22.4px;
+  }
+  #menu-toggle:checked + #menu {
+    display: block;
+  }
+  .gallery {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 6.25em;
+    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+    justify-items: center;
   }
 </style>

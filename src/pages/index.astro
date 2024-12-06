@@ -1,9 +1,25 @@
 ---
+import Benefits from "@sections/benefits.astro";
+import BusinessContact from "@sections/businessContact.astro";
+import Contact from "@sections/contact.astro";
+import Experience from "@sections/experience.astro";
+import Hero from "@sections/hero.astro";
+import Introduction from "@sections/introduction.astro";
+import Quote from "@sections/quote.astro";
+import ServicesSlider from "@sections/servicesSlider.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <h1 class="font-workSans text-h1 leading-h1 text-center pt-10 text-action03">
-    Ashlee
-  </h1>
+  <Hero />
+  <Introduction />
+  <Benefits />
+  <ServicesSlider />
+  <Experience />
+  <Contact
+    title="¿Te gustaría comenzar un proceso terapéutico conmigo?"
+    text="¡Estoy aquí para acompañarte! Escríbeme y concertemos una primera sesión para conocernos."
+  />
+  <Quote />
+  <BusinessContact />
 </Layout>
