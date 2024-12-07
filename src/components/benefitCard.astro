@@ -5,8 +5,8 @@ const { title, text } = Astro.props;
 ---
 
 <div>
-  <div class="flex gap-s">
-    <div class="min-h-10 min-w-10">
+  <div class="flex gap-s md:flex-col">
+    <div class="min-h-10 min-w-10 max-w-10 max-h-10">
       <slot />
     </div>
     <div>
