@@ -1,0 +1,31 @@
+---
+import H4 from "@components/h4.astro";
+
+const experienceImgLinks = [
+  { link: "/deusto.png", name: "Deusto" },
+  {
+    link: "/colegio-psicologia-bizkaia.png",
+    name: "Colegio de Psicología de Bizkaia",
+  },
+  {
+    link: "/medicos-bilvao.png",
+    name: "Centro de especialistas Médicos Bilbao, pediatría y adultos",
+  },
+  { link: "/siac.png", name: "siac" },
+  { link: "/gac.png", name: "GAC, Grupo ALBOR-COHS" },
+  { link: "/viu.png", name: "viu, Universidad Internacional de Valencia" },
+];
+---
+
+<section class="px-l py-xl">
+  <H4>Mi experiencia está reconocida por…</H4>
+  <ul class="gallery mt-8">
+    {
+      experienceImgLinks.map((image) => (
+        <li class="">
+          <img src={image.link} alt={image.name} />
+        </li>
+      ))
+    }
+  </ul>
+</section>
