@@ -76,6 +76,7 @@ export default {
       transparent: "transparent",
     },
     padding: {
+      0: "0rem",
       s: "0.5rem",
       m: "1rem",
       l: "1.5rem",
