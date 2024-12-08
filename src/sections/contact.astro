@@ -12,7 +12,9 @@ const { title, text } = Astro.props;
   <p class="leading-body text-center mb-8">
     {text}
   </p>
-  <div class="w-full">
-    <WhatsappContactButton />
+  <div class="flex justify-center">
+    <div class="mt-8 w-full md:max-w-[160px]">
+      <WhatsappContactButton />
+    </div>
   </div>
 </section>

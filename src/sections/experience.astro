@@ -17,15 +17,17 @@ const experienceImgLinks = [
 ];
 ---
 
-<section class="px-l py-xl">
-  <H4>Mi experiencia está reconocida por…</H4>
-  <ul class="gallery mt-8">
-    {
-      experienceImgLinks.map((image) => (
-        <li class="">
-          <img src={image.link} alt={image.name} />
-        </li>
-      ))
-    }
-  </ul>
+<section class="px-l py-xl md:px-xxxl lg:px-[240px]">
+  <H4 class="md:text-center">Mi experiencia está reconocida por…</H4>
+  <div class="flex justify-center w-full flex-col mt-8">
+    <ul class="gallery">
+      {
+        experienceImgLinks.map((image) => (
+          <li>
+            <img src={image.link} alt={image.name} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
