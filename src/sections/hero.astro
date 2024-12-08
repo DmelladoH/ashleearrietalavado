@@ -1,5 +1,6 @@
 ---
 import H1 from "@components/h1.astro";
+import ResponsiveImage from "@components/responsiveImage.astro";
 import WhatsappContactButton from "@components/whatsappContactButton.astro";
 ---
 
@@ -19,13 +20,10 @@ import WhatsappContactButton from "@components/whatsappContactButton.astro";
       <WhatsappContactButton />
     </div>
   </div>
-  <div class="relative h-[426px] md:h-[auto] min-w-[300px] pt-xxl">
-    <div class="bg-accent03 h-[60%] md:hidden"></div>
-    <div class="bg-white h-[40%] md:hidden"></div>
-    <img
-      src="/hero.png"
-      alt=""
-      class="absolute top-0 left-0 right-0 m-auto max-h-full m-w-full"
-    />
-  </div>
+  <ResponsiveImage
+    firstColor="bg-accent03"
+    secondColor="bg-white"
+    imgDesktop="/hero.png"
+    imgMobile="/hero-mobile.png"
+  />
 </section>
