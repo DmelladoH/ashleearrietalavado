@@ -91,6 +91,8 @@ export default {
       m: "1.5rem",
       l: "2rem",
       xl: "3rem",
+      xxl: "3.5rem",
+      xxxl: "6rem",
     },
     borderRadius: {
       default: "0.5rem",

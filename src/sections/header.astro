@@ -1,41 +1,125 @@
 ---
-import PrimaryButton from "@components/primaryButton.astro";
+import WhatsappContactButton from "@components/whatsappContactButton.astro";
 import Bars3 from "@icons/bars3.astro";
+import Cross from "@icons/cross.astro";
 import LogoWithTitle from "@icons/logoWithTitle.astro";
-import Whatsapp from "@icons/whatsapp.astro";
+import SimpleLogo from "@icons/simpleLogo.astro";
 ---
 
 <header class="bg-white py-l px-l justify-between flex">
-  <div class="w-28 h-12">
-    <LogoWithTitle />
+  <div class="w-28">
+    <a href="/">
+      <div id="long-icon" class="icon h-12" data-visible="true">
+        <LogoWithTitle />
+      </div>
+      <div id="short-icon" class="icon md:hidden h-12" data-visible="false">
+        <SimpleLogo />
+      </div>
+    </a>
   </div>
 
-  <nav class="bg-white">
-    <ul>
-      <li>
-        <a href="/">Página principal</a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a href="/terapias">Terapias</a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a href="/servicios-para-empresas">Servicios para empresas</a>
-      </li>
-    </ul>
-  </nav>
-  <!-- <PrimaryButton>
-    <div slot="icon" class="w-6 h-6">
-      <Whatsapp />
+  <div
+    id="primary-nav"
+    class="primary-nav w-full justify-between grid p-l"
+    data-visible="false"
+  >
+    <div class="w-full grid gap-xl">
+      <div class="flex justify-between w-full">
+        <div class="w-28 h-12">
+          <a href="/"> </a>
+        </div>
+        <!-- <button>
+          <span class="sr-only">Cerrar menu</span>
+          <div class="w-10 h-10">
+            <Cross />
+          </div>
+        </button> -->
+      </div>
+      <nav>
+        <ul class="grid gap-l text-center">
+          <li>
+            <a href="/">Página principal</a>
+          </li>
+          <li>
+            <a href="/terapias">Terapias</a>
+          </li>
+          <li>
+            <a href="/servicios-para-empresas">Servicios para empresas</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <span slot="text" class="font-medium">Contactar</span>
-  </PrimaryButton> -->
-  <!-- <button class="">
+    <div class="w-full">
+      <WhatsappContactButton />
+    </div>
+  </div>
+
+  <button
+    id="toggle-menu"
+    aria-controls="primary-nav"
+    aria-expanded="false"
+    class="md:hidden"
+  >
+    <span class="sr-only">Abrir menu</span>
     <div class="w-10 h-10">
       <Bars3 />
     </div>
-  </button> -->
+  </button>
 </header>
+
+<script defer>
+  const primaryNav = document.getElementById("primary-nav");
+  const toggleMenuButton = document.getElementById("toggle-menu");
+  const shortIcon = document.getElementById("short-icon");
+  const longIcon = document.getElementById("long-icon");
+
+  const body = document.querySelector("body");
+
+  toggleMenuButton.addEventListener("click", () => {
+    const isVisible = primaryNav.getAttribute("data-visible") === "true";
+
+    if (isVisible) {
+      primaryNav.setAttribute("data-visible", "false");
+      toggleMenuButton.setAttribute("aria-expanded", "false");
+      body.classList.remove("removeScroll");
+      longIcon.setAttribute("data-visible", "true");
+      shortIcon.setAttribute("data-visible", "false");
+    } else {
+      primaryNav.setAttribute("data-visible", "true");
+      toggleMenuButton.setAttribute("aria-expanded", "true");
+      body.classList.add("removeScroll");
+      longIcon.setAttribute("data-visible", "false");
+      shortIcon.setAttribute("data-visible", "true");
+    }
+  });
+</script>
+
+<style>
+  .primary-nav > nav > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  @media (max-width: 35em) {
+    .primary-nav {
+      position: fixed;
+      inset: 0;
+      margin-top: 96px;
+      background: white;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 999;
+      transform: translateX(100%);
+    }
+
+    .primary-nav[data-visible="true"] {
+      transform: translateX(0%);
+    }
+
+    .icon[data-visible="false"] {
+      display: none;
+    }
+  }
+</style>
