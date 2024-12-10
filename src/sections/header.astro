@@ -51,9 +51,14 @@ import SimpleLogo from "@icons/simpleLogo.astro";
     aria-expanded="false"
     class="md:hidden"
   >
-    <span class="sr-only">Abrir menu</span>
+    <span class="sr-only">Abrir/Cerrar menu</span>
     <div class="w-10 h-10">
-      <Bars3 />
+      <div class="barsIcon icon" data-visible="true">
+        <Bars3 />
+      </div>
+      <div class="crossIcon icon" data-visible="false">
+        <Cross />
+      </div>
     </div>
   </button>
 </header>
@@ -63,6 +68,9 @@ import SimpleLogo from "@icons/simpleLogo.astro";
   const toggleMenuButton = document.getElementById("toggle-menu");
   const shortIcon = document.getElementById("short-icon");
   const longIcon = document.getElementById("long-icon");
+
+  const barsIcon = document.querySelector(".barsIcon");
+  const crossIcon = document.querySelector(".crossIcon");
 
   const body = document.querySelector("body");
 
@@ -75,12 +83,18 @@ import SimpleLogo from "@icons/simpleLogo.astro";
       body.classList.remove("removeScroll");
       longIcon.setAttribute("data-visible", "true");
       shortIcon.setAttribute("data-visible", "false");
+
+      barsIcon.setAttribute("data-visible", "true");
+      crossIcon.setAttribute("data-visible", "false");
     } else {
       primaryNav.setAttribute("data-visible", "true");
       toggleMenuButton.setAttribute("aria-expanded", "true");
       body.classList.add("removeScroll");
       longIcon.setAttribute("data-visible", "false");
       shortIcon.setAttribute("data-visible", "true");
+
+      barsIcon.setAttribute("data-visible", "false");
+      crossIcon.setAttribute("data-visible", "true");
     }
   });
 </script>
@@ -126,6 +140,13 @@ import SimpleLogo from "@icons/simpleLogo.astro";
     .primary-nav {
       display: flex;
       flex-direction: column;
+    }
+    .primary-nav[data-visible="true"] {
+      transform: translateX(0%);
+    }
+
+    .icon[data-visible="false"] {
+      display: none;
     }
     .primary-nav[data-visible="true"] {
       transform: translateX(0%);
