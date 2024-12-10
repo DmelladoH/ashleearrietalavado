@@ -5,6 +5,8 @@ import Cross from "@icons/cross.astro";
 import LogoWithTitle from "@icons/logoWithTitle.astro";
 import SimpleLogo from "@icons/simpleLogo.astro";
 
+const { pathname } = Astro.url;
+
 const links = [
   {
     href: "/",
@@ -18,7 +20,10 @@ const links = [
     href: "/servicios-para-empresas",
     name: "Servicios para empresas",
   },
-];
+].map((link) => ({
+  ...link,
+  active: pathname === link.href,
+}));
 ---
 
 <header
@@ -49,7 +54,9 @@ const links = [
       <ul>
         {
           links.map((link) => (
-            <li>
+            <li
+              class={`${link.active ? "text-action04 border-b-2 border-action04" : ""} border-b-2 border-white p-s`}
+            >
               <a href={link.href}>{link.name}</a>
             </li>
           ))
