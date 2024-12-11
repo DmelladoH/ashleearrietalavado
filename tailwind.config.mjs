@@ -86,7 +86,7 @@ export default {
     },
     gap: {
       xxs: "0.25rem",
-      sx: "0.5rem",
+      xs: "0.5rem",
       s: "1rem",
       m: "1.5rem",
       l: "2rem",

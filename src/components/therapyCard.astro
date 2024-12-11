@@ -1,0 +1,45 @@
+---
+import Clock from "@icons/clock.astro";
+import Badge from "./badge.astro";
+import H2 from "./h2.astro";
+import H4 from "./h4.astro";
+import TherapyInfo from "./therapyInfo.astro";
+
+const {
+  title,
+  onlinePrice,
+  onlineTimeInMinutes,
+  inPersonPrice,
+  inPersonTimeInMinutes,
+  description,
+  details,
+  priceDisclaimer,
+} = Astro.props;
+---
+
+<article class="border-2 border-main06 rounded-default pb-m">
+  <header class="py-m px-l bg-main06 text-white">
+    <p class="text-h4 font-medium leading-h4">Terapia</p>
+    <H2>{title}</H2>
+  </header>
+  <div class="px-l pt-l">
+    <div class="grid gap-xs">
+      <TherapyInfo
+        title="Sesión presencial"
+        price={inPersonPrice}
+        disclaimer={priceDisclaimer}
+        time={inPersonTimeInMinutes}
+      />
+      <TherapyInfo
+        title="Sesión online"
+        price={onlinePrice}
+        disclaimer={priceDisclaimer}
+        time={onlineTimeInMinutes}
+      />
+    </div>
+    <p class="text-body leading-body mt-6 mb-4">
+      {description}
+    </p>
+    <p>Cuando acudir</p>
+  </div>
+</article>
