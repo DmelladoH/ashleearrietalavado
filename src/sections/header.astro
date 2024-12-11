@@ -28,7 +28,7 @@ const links = [
 
 <header
   id="app-header"
-  class="bg-white py-l px-l justify-between flex items-center drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)] fixed w-full z-50"
+  class="bg-white py-l px-l md:px-xxl justify-between flex items-center drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)] fixed w-full z-50"
 >
   <div>
     <a href="/">
@@ -55,7 +55,7 @@ const links = [
         {
           links.map((link) => (
             <li
-              class={`${link.active ? "text-action04 border-b-2 border-action04" : ""} border-b-2 border-white p-s`}
+              class={`${link.active ? "text-action04 border-b-2 border-b-action04" : ""} border-b-2 border-white p-s`}
             >
               <a href={link.href}>{link.name}</a>
             </li>
