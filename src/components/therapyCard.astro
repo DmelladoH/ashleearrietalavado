@@ -17,29 +17,42 @@ const {
 } = Astro.props;
 ---
 
-<article class="border-2 border-main06 rounded-default pb-m">
+<article
+  class="border-2 border-main06 rounded-default pb-m h-full flex flex-col"
+>
   <header class="py-m px-l bg-main06 text-white">
     <p class="text-h4 font-medium leading-h4">Terapia</p>
     <H2>{title}</H2>
   </header>
-  <div class="px-l pt-l">
-    <div class="grid gap-xs">
-      <TherapyInfo
-        title="Sesión presencial"
-        price={inPersonPrice}
-        disclaimer={priceDisclaimer}
-        time={inPersonTimeInMinutes}
-      />
-      <TherapyInfo
-        title="Sesión online"
-        price={onlinePrice}
-        disclaimer={priceDisclaimer}
-        time={onlineTimeInMinutes}
-      />
+  <div class="flex flex-col px-l pt-l flex-grow">
+    <div class="flex-grow">
+      <div class="grid gap-xs">
+        <TherapyInfo
+          title="Sesión presencial"
+          price={inPersonPrice}
+          disclaimer={priceDisclaimer}
+          time={inPersonTimeInMinutes}
+        />
+        <TherapyInfo
+          title="Sesión online"
+          price={onlinePrice}
+          disclaimer={priceDisclaimer}
+          time={onlineTimeInMinutes}
+        />
+        {
+          priceDisclaimer && (
+            <p class="text-info font-normal">*{priceDisclaimer}</p>
+          )
+        }
+      </div>
+      <div class="">
+        <p class="text-body leading-body mt-6 mb-4">
+          {description}
+        </p>
+      </div>
     </div>
-    <p class="text-body leading-body mt-6 mb-4">
-      {description}
-    </p>
-    <p>Cuando acudir</p>
+    <div>
+      <p>Cuando acudir</p>
+    </div>
   </div>
 </article>
