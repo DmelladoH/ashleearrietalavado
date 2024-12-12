@@ -1,5 +1,6 @@
 ---
 import H2 from "./h2.astro";
+import List from "./list.astro";
 import TherapyInfo from "./therapyInfo.astro";
 
 const {
@@ -48,8 +49,38 @@ const {
         </p>
       </div>
     </div>
-    <div>
-      <p>Cuando acudir</p>
-    </div>
+    <details>
+      <summary>Cuando acudir</summary>
+      <List>
+        <li>asdasd</li>
+        <li>asdasd</li>
+        <li>asdasd</li>
+        <li>asdasd</li>
+        <li>asdasd</li>
+        <li>asdasd</li>
+        <li>asdasd</li>
+      </List>
+    </details>
   </div>
 </article>
+
+<style>
+  details > summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    background: url("/chevron_down.svg") center no-repeat;
+    content: "";
+    color: transparent;
+    width: 24px;
+  }
+  details[open] summary:after {
+    background: url("/chevron_up.svg") center no-repeat;
+  }
+</style>
