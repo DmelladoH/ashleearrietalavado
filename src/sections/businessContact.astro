@@ -4,13 +4,17 @@ import SecondaryButton from "@components/secondaryButton.astro";
 ---
 
 <section class="py-xl px-l">
-  <H3 class="text-center">¿Eres parte de un centro?</H3>
-  <p class="leading-body mt-4 text-center">
+  <H3 class="text-center md:text-left">¿Eres parte de un centro?</H3>
+  <p class="leading-body mt-4 text-center md:text-left">
     Si eres parte de un centro de estudios, entorno laboral o trabajo social,
     también puedo acompañaros en vuestro viaje grupal y aprendizaje hacia
     dinámicas sanas y satisfactorias.
   </p>
   <div class="flex justify-center mt-8">
-    <SecondaryButton href="/servicios-para-empresas">Saber más</SecondaryButton>
+    <div class="mt-8 w-full md:max-w-[160px]">
+      <SecondaryButton href="/servicios-para-empresas"
+        >Saber más</SecondaryButton
+      >
+    </div>
   </div>
 </section>
