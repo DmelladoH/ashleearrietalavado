@@ -18,12 +18,12 @@ const experienceImgLinks = [
 ---
 
 <div class="px-l py-xl md:px-xxxl lg:px-[240px] order-2 md:order-2">
-  <H4 class="md:text-center">Mi experiencia está reconocida por…</H4>
+  <H4 class="text-center font-medium">Mi experiencia está reconocida por…</H4>
   <div class="flex justify-center w-full flex-col mt-8">
-    <ul class="gallery">
+    <ul class="grid grid-cols-3 gap-xs lg:grid-cols-6">
       {
         experienceImgLinks.map((image) => (
-          <li>
+          <li class="flex justify-center">
             <img src={image.link} alt={image.name} />
           </li>
         ))
@@ -35,9 +35,8 @@ const experienceImgLinks = [
 <style>
   .gallery {
     display: grid;
-    gap: 1rem;
-    grid-auto-rows: 6.25em;
-    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+    grid-auto-rows: 4em;
+    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
     justify-items: center;
   }
 </style>
