@@ -3,21 +3,31 @@ import Experience from "@components/experience.astro";
 import H3 from "@components/h3.astro";
 import List from "@components/list.astro";
 import ResponsiveImage from "@components/responsiveImage.astro";
+
+const pains = [
+  "Dependencia emocional",
+  "Ansiedad",
+  "Depresión",
+  "Dificultades de la atención",
+  "Habilidades de comunicación",
+  "Prevención del suicidio",
+];
 ---
 
 <section class="grid md:grid-cols-2">
   <div class="md:col-span-2 order-2 md:order-1">
     <Experience />
   </div>
-  <div class="order-3 md:order-2 md:ml-[300px]">
+  <div class="order-3 md:order-2 md:ml-[300px] self-center">
     <H3>Te puedo ayudar con...</H3>
     <List class="mt-6">
-      <li>Dependencia emocional</li>
-      <li>Ansiedad</li>
-      <li>Depresión</li>
-      <li>Dificultades de la atención</li>
-      <li>Habilidades de comunicación</li>
-      <li>Prevención del suicidio</li>
+      {
+        pains.map((pain) => (
+          <li>
+            <p class="text-bullet leading-bullet">{pain}</p>
+          </li>
+        ))
+      }
     </List>
   </div>
   <ResponsiveImage
