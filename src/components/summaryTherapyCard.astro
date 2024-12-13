@@ -1,0 +1,38 @@
+---
+import Clock from "@icons/clock.astro";
+import BadgeSmall from "./badgeSmall.astro";
+import H3 from "./h3.astro";
+import List from "./list.astro";
+
+const { id, title, price, time, details } = Astro.props;
+---
+
+<article class="py-m px-l bg-neutral03 border-main06 border-2 rounded-default">
+  <a href=`/terapias#${id}` aria-label=`ver detalles de la terapia ${title}`>
+    <H3>{title}</H3>
+    <div class="flex gap-s align-middle items-center mt-2">
+      <BadgeSmall price={price} />
+      <div class="flex gap-xxs">
+        <div class="h-6 w-6">
+          <Clock />
+        </div>
+        <p class="text-info font-light">
+          <span class="text-h4 font-medium text-main09">{time}</span> min
+        </p>
+      </div>
+    </div>
+    <List class="my-6">
+      {
+        details.map((detail) => (
+          <li>
+            <p>{detail}</p>
+          </li>
+        ))
+      }
+    </List>
+    <span
+      class="text-action font-medium underline text-main07 underline-offset-4"
+      >Saber más</span
+    >
+  </a>
+</article>
