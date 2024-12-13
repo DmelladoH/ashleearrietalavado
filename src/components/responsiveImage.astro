@@ -9,10 +9,7 @@ const {
 } = Astro.props;
 ---
 
-<div
-  class={`relative h-[400px]  min-w-[400px] ${className || ""}`}
-  {...otherProps}
->
+<div class={`relative h-[400px] ${className || ""}`} {...otherProps}>
   <div class={`${firstColor} h-[50%] md:hidden`}></div>
   <div class={`${secondColor} h-[50%] md:hidden`}></div>
   <picture>
@@ -21,7 +18,15 @@ const {
     <img
       src={imgDesktop}
       alt=""
-      class="absolute top-0 left-0 right-0 m-auto max-h-full m-w-full"
+      class="absolute md:relative top-0 left-0 right-0 m-auto max-h-full m-w-full w-full md:w-auto"
     />
   </picture>
 </div>
+
+<style>
+  @media (min-width: 400px) {
+    img {
+      max-width: 400px;
+    }
+  }
+</style>
