@@ -5,7 +5,7 @@ import Badge from "./badge.astro";
 const { title, price, disclaimer, time } = Astro.props;
 ---
 
-<div class="grid gap-xs md:px-[240px]">
+<div class="grid gap-xs">
   <p class="text-info font-bold leading-info">{title}</p>
   <div class="flex gap-s align-middle items-center">
     <Badge price={price} disclaimer={disclaimer} />
