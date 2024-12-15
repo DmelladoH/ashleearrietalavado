@@ -2,6 +2,8 @@
 import H1 from "@components/h1.astro";
 import ResponsiveImage from "@components/responsiveImage.astro";
 import WhatsappContactButton from "@components/whatsappContactButton.astro";
+import hero from "@pictures/hero.png";
+import heroMobil from "@pictures/hero-mobile.png";
 ---
 
 <section
@@ -23,7 +25,7 @@ import WhatsappContactButton from "@components/whatsappContactButton.astro";
   <ResponsiveImage
     firstColor="bg-accent03"
     secondColor="bg-white"
-    imgDesktop="/hero.png"
-    imgMobile="/hero-mobile.png"
+    imgDesktop={hero}
+    imgMobile={heroMobil}
   />
 </section>

@@ -1,4 +1,6 @@
 ---
+import { getImage } from "astro:assets";
+
 const {
   class: className,
   firstColor,
@@ -7,18 +9,32 @@ const {
   imgMobile,
   ...otherProps
 } = Astro.props;
+
+const mobileImage = await getImage({
+  src: imgMobile,
+  format: "webp",
+  width: 375,
+  height: 429,
+});
+
+const desktopImg = await getImage({
+  src: imgDesktop,
+  format: "webp",
+  width: 448,
+  height: 474,
+});
 ---
 
 <div class={`relative h-[400px] ${className || ""}`} {...otherProps}>
   <div class={`${firstColor} h-[50%] md:hidden`}></div>
   <div class={`${secondColor} h-[50%] md:hidden`}></div>
   <picture>
-    <source media="(min-width: 400px)" srcset={imgDesktop} />
-    <source media="(max-width: 400px)" srcset={imgMobile} />
+    <source media="(min-width: 350px)" srcset={desktopImg.src} />
+    <source media="(max-width: 350px)" srcset={mobileImage.src} />
     <img
-      src={imgDesktop}
+      src={desktopImg.src}
       alt=""
-      class="absolute md:relative top-0 left-0 right-0 m-auto max-h-full m-w-full w-full md:w-auto"
+      class="absolute md:relative top-0 left-0 right-0 m-auto max-h-full md:w-auto"
     />
   </picture>
 </div>

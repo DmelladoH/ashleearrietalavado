@@ -1,30 +1,88 @@
 ---
 import H4 from "@components/h4.astro";
+import deusto from "@pictures/deusto.png";
+import colegioPsicologiaBizkaia from "@pictures/colegio-psicologia-bizkaia.png";
+import medicosBilvao from "@pictures/medicos-bilvao.png";
+import siac from "@pictures/siac.png";
+import gac from "@pictures/gac.png";
+import viu from "@pictures/viu.png";
 
-const experienceImgLinks = [
-  { link: "/deusto.png", name: "Deusto" },
-  {
-    link: "/colegio-psicologia-bizkaia.png",
+import { getImage } from "astro:assets";
+
+const width = 96;
+const height = 40;
+
+const experienceImgLinks = await Promise.all([
+  getImage({
+    src: deusto,
+    format: "webp",
+    width,
+    height,
+  }).then((img) => ({
+    link: img.src,
+    name: "Deusto",
+  })),
+  getImage({
+    src: colegioPsicologiaBizkaia,
+    format: "webp",
+    width,
+    height,
+  }).then((img) => ({
+    link: img.src,
     name: "Colegio de Psicología de Bizkaia",
-  },
-  {
-    link: "/medicos-bilvao.png",
-    name: "Centro de especialistas Médicos Bilbao, pediatría y adultos",
-  },
-  { link: "/siac.png", name: "siac" },
-  { link: "/gac.png", name: "GAC, Grupo ALBOR-COHS" },
-  { link: "/viu.png", name: "viu, Universidad Internacional de Valencia" },
-];
+  })),
+  getImage({
+    src: medicosBilvao,
+    format: "webp",
+    width,
+    height,
+  }).then((img) => ({
+    link: img.src,
+    name: "Centro de Especialistas Médicos Bilbao, pediatría y adultos",
+  })),
+  getImage({
+    src: siac,
+    format: "webp",
+    width,
+    height,
+  }).then((img) => ({
+    link: img.src,
+    name: "SIAC",
+  })),
+  getImage({
+    src: gac,
+    format: "webp",
+    width,
+    height,
+  }).then((img) => ({
+    link: img.src,
+    name: "GAC, Grupo ALBOR-COHS",
+  })),
+  getImage({
+    src: viu,
+    format: "webp",
+    width,
+    height,
+  }).then((img) => ({
+    link: img.src,
+    name: "VIU, Universidad Internacional de Valencia",
+  })),
+]);
 ---
 
-<div class="px-l py-xl md:px-xxxl lg:px-[240px] order-2 md:order-2">
+<div class="px-l py-xl md:px-xxxl lg:px-[240px] order-2">
   <H4 class="text-center font-medium">Mi experiencia está reconocida por…</H4>
-  <div class="flex justify-center w-full flex-col mt-8">
-    <ul class="grid grid-cols-3 gap-xs lg:grid-cols-6">
+  <div class="w-full flex flex-col mt-8">
+    <ul class="gallery">
       {
         experienceImgLinks.map((image) => (
-          <li class="flex justify-center">
-            <img src={image.link} alt={image.name} />
+          <li class="flex justify-center items-center" key={image.name}>
+            <img
+              src={image.link}
+              alt={image.name}
+              loading="lazy"
+              class="max-w-full h-auto md:w-[115px] md:h-[48px]"
+            />
           </li>
         ))
       }
@@ -35,8 +93,15 @@ const experienceImgLinks = [
 <style>
   .gallery {
     display: grid;
-    grid-auto-rows: 4em;
     grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+    gap: 1rem;
     justify-items: center;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 </style>

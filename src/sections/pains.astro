@@ -3,6 +3,8 @@ import Experience from "@components/experience.astro";
 import H3 from "@components/h3.astro";
 import List from "@components/list.astro";
 import ResponsiveImage from "@components/responsiveImage.astro";
+import kvFull from "@pictures/kv-full.png";
+import kvMobile from "@pictures/kv-mobile.png";
 
 const pains = [
   "Dependencia emocional",
@@ -34,7 +36,7 @@ const pains = [
     class="order-1 md:order-2"
     firstColor="bg-neutral02"
     secondColor="bg-white"
-    imgDesktop="/kv-full.png"
-    imgMobile="/kv-mobile.png"
+    imgDesktop={kvFull}
+    imgMobile={kvMobile}
   />
 </section>

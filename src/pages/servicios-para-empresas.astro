@@ -4,6 +4,9 @@ import H3 from "@components/h3.astro";
 import ResponsiveImage from "@components/responsiveImage.astro";
 import Contact from "@sections/contact.astro";
 import Layout from "src/layouts/Layout.astro";
+
+import kvSecondaryFull from "@pictures/kv-secondary-full.png";
+import kvSecondaryMobile from "@pictures/kv-mobile.png";
 ---
 
 <Layout>
@@ -26,8 +29,8 @@ import Layout from "src/layouts/Layout.astro";
     </div>
     <ResponsiveImage
       class="h-[286px] md:px-xl"
-      imgDesktop="/kv-secondary-full.png"
-      imgMobile="/kv-seconday-mobile.png"
+      imgDesktop={kvSecondaryFull}
+      imgMobile={kvSecondaryMobile}
     />
   </section>
   <Contact

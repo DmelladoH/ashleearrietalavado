@@ -6,6 +6,7 @@
     "baseUrl": ".",
     "paths": {
       "@icons/*": ["src/assets/icons/*"],
+      "@pictures/*": ["src/assets/pictures/*"],
       "@sections/*": ["src/sections/*"],
       "@components/*": ["src/components/*"]
     }
