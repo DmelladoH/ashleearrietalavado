@@ -1,21 +1,149 @@
 ---
 import H4 from "@components/h4.astro";
 import SummaryTherapyCard from "@components/summaryTherapyCard.astro";
+import Clock from "@icons/clock.astro";
+
+const cardsContent = [
+  {
+    title: "para adultos",
+    onlinePrice: 60,
+    onlineTimeInMinutes: 50,
+    inPersonPrice: 70,
+    inPersonTimeInMinutes: 50,
+    details: [],
+  },
+  {
+    title: "infantil",
+    onlinePrice: 60,
+    onlineTimeInMinutes: 50,
+    inPersonPrice: 70,
+    inPersonTimeInMinutes: 50,
+    details: [],
+  },
+  {
+    title: "de adolescentes",
+    onlinePrice: 60,
+    onlineTimeInMinutes: 50,
+    inPersonPrice: 70,
+    inPersonTimeInMinutes: 50,
+    details: [],
+  },
+  {
+    title: "para personas mayores",
+    onlinePrice: 60,
+    onlineTimeInMinutes: 50,
+    inPersonPrice: 70,
+    inPersonTimeInMinutes: 50,
+    details: [],
+  },
+  {
+    title: "de pareja",
+    onlinePrice: 80,
+    onlineTimeInMinutes: 60,
+    inPersonPrice: 90,
+    inPersonTimeInMinutes: 60,
+    details: [],
+  },
+  {
+    title: "de familia",
+    onlinePrice: 80,
+    onlineTimeInMinutes: 60,
+    inPersonPrice: 90,
+    inPersonTimeInMinutes: 60,
+    details: [],
+  },
+  {
+    title: "grupal",
+    onlinePrice: 30,
+    onlineTimeInMinutes: 60,
+    inPersonPrice: 40,
+    inPersonTimeInMinutes: 60,
+    details: [],
+    priceDisclaimer: "precio por persona",
+  },
+];
 ---
 
-<section class="md:px-xxxl lg:px-[200px] py-xl px-l">
+<section class="md:px-xxxl py-xl px-l">
   <H4 class="font-medium">Escoje la terapia que mejor se adapte a ti</H4>
-  <div class="flex justify-center my-6">
-    <SummaryTherapyCard
-      id="grupal"
-      title="Terapia adultos"
-      price="70"
-      time="50"
-      details={[
-        "Manejo de la utoestima",
-        "Límites y asertividad",
-        "Dependencia emocional",
-      ]}
-    />
+  <div class="flex">
+    <button class="swiper-button-prev-unique"> </button>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {
+          cardsContent.map((card) => (
+            <li class="swiper-slide">
+              <SummaryTherapyCard
+                id={card.title}
+                title={`Terapia ${card.title}`}
+                price={card.inPersonPrice}
+                time={card.inPersonTimeInMinutes}
+                details={[
+                  "Manejo de la utoestima",
+                  "Límites y asertividad",
+                  "Dependencia emocional",
+                ]}
+              />
+            </li>
+          ))
+        }
+      </div>
+    </div>
+    <button class="swiper-button-next-unique">
+      <Clock />
+    </button>
   </div>
 </section>
+
+<style>
+  .swiper-button-next-unique,
+  .swiper-button-prev-unique {
+    width: 24px;
+    height: 24px;
+  }
+
+  .swiper-button-next-unique::after,
+  .swiper-button-next-unique::after {
+    content: "";
+  }
+
+  .swiper-pagination-bullet {
+    width: 40px;
+    height: 40px;
+  }
+</style>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+></script>
+
+<script type="module">
+  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+  new Swiper(".swiper", {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    navigation: {
+      prevEl: ".swiper-button-prev-unique",
+      nextEl: ".swiper-button-next-unique",
+    },
+    breakpoints: {
+      20: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
+  });
+</script>
