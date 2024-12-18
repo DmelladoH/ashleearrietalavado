@@ -9,7 +9,10 @@ import { therapies } from "src/content/therapies";
   <H4 class="font-medium px-l">Escoje la terapia que mejor se adapte a ti</H4>
   <div class="flex mt-8">
     <div class="flex items-center p-s">
-      <button class="swiper-button-prev-unique">
+      <button
+        class="swiper-button-prev-unique"
+        aria-label="mover carrusel a la izquierda"
+      >
         <ChevronRight class="rotate-180" />
       </button>
     </div>
@@ -35,7 +38,10 @@ import { therapies } from "src/content/therapies";
       </div>
     </div>
     <div class="flex items-center p-s">
-      <button class="swiper-button-next-unique">
+      <button
+        class="swiper-button-next-unique"
+        aria-label="mover carrusel a la derecha"
+      >
         <ChevronRight />
       </button>
     </div>
@@ -83,11 +89,11 @@ import { therapies } from "src/content/therapies";
         slidesPerView: 1,
         spaceBetween: 20,
       },
-      640: {
+      580: {
         slidesPerView: 2,
         spaceBetween: 40,
       },
-      768: {
+      1200: {
         slidesPerView: 3,
         spaceBetween: 40,
       },
