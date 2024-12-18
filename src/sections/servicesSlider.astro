@@ -1,77 +1,22 @@
 ---
 import H4 from "@components/h4.astro";
 import SummaryTherapyCard from "@components/summaryTherapyCard.astro";
-import Clock from "@icons/clock.astro";
-
-const cardsContent = [
-  {
-    title: "para adultos",
-    onlinePrice: 60,
-    onlineTimeInMinutes: 50,
-    inPersonPrice: 70,
-    inPersonTimeInMinutes: 50,
-    details: [],
-  },
-  {
-    title: "infantil",
-    onlinePrice: 60,
-    onlineTimeInMinutes: 50,
-    inPersonPrice: 70,
-    inPersonTimeInMinutes: 50,
-    details: [],
-  },
-  {
-    title: "de adolescentes",
-    onlinePrice: 60,
-    onlineTimeInMinutes: 50,
-    inPersonPrice: 70,
-    inPersonTimeInMinutes: 50,
-    details: [],
-  },
-  {
-    title: "para personas mayores",
-    onlinePrice: 60,
-    onlineTimeInMinutes: 50,
-    inPersonPrice: 70,
-    inPersonTimeInMinutes: 50,
-    details: [],
-  },
-  {
-    title: "de pareja",
-    onlinePrice: 80,
-    onlineTimeInMinutes: 60,
-    inPersonPrice: 90,
-    inPersonTimeInMinutes: 60,
-    details: [],
-  },
-  {
-    title: "de familia",
-    onlinePrice: 80,
-    onlineTimeInMinutes: 60,
-    inPersonPrice: 90,
-    inPersonTimeInMinutes: 60,
-    details: [],
-  },
-  {
-    title: "grupal",
-    onlinePrice: 30,
-    onlineTimeInMinutes: 60,
-    inPersonPrice: 40,
-    inPersonTimeInMinutes: 60,
-    details: [],
-    priceDisclaimer: "precio por persona",
-  },
-];
+import ChevronRight from "@icons/chevronRight.astro";
+import { therapies } from "src/content/therapies";
 ---
 
-<section class="md:px-xxxl py-xl px-l">
-  <H4 class="font-medium">Escoje la terapia que mejor se adapte a ti</H4>
-  <div class="flex">
-    <button class="swiper-button-prev-unique"> </button>
+<section class="md:px-xxxl py-xl">
+  <H4 class="font-medium px-l">Escoje la terapia que mejor se adapte a ti</H4>
+  <div class="flex mt-8">
+    <div class="flex items-center p-s">
+      <button class="swiper-button-prev-unique">
+        <ChevronRight class="rotate-180" />
+      </button>
+    </div>
     <div class="swiper">
       <div class="swiper-wrapper">
         {
-          cardsContent.map((card) => (
+          therapies.map((card) => (
             <li class="swiper-slide">
               <SummaryTherapyCard
                 id={card.title}
@@ -89,9 +34,11 @@ const cardsContent = [
         }
       </div>
     </div>
-    <button class="swiper-button-next-unique">
-      <Clock />
-    </button>
+    <div class="flex items-center p-s">
+      <button class="swiper-button-next-unique">
+        <ChevronRight />
+      </button>
+    </div>
   </div>
 </section>
 
