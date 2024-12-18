@@ -100,7 +100,7 @@ export default {
     },
     extend: {
       screens: {
-        desktop: "1440px",
+        desktop: "1000px",
       },
     },
   },

@@ -28,7 +28,7 @@ const links = [
 
 <header
   id="app-header"
-  class="bg-white py-l px-l md:px-xxl justify-between flex items-center drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)] fixed w-full z-50"
+  class="bg-white py-l px-l desktop:px-xxl justify-between flex items-center drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)] fixed w-full z-50"
 >
   <div>
     <a href="/" aria-label="ir a página principal">
@@ -37,7 +37,7 @@ const links = [
       </div>
       <div
         id="short-icon"
-        class="icon md:hidden h-12 w-[30px]"
+        class="icon desktop:hidden h-12 w-[30px]"
         data-visible="false"
       >
         <SimpleLogo />
@@ -47,7 +47,7 @@ const links = [
 
   <div
     id="primary-nav"
-    class="primary-nav justify-between grid p-l pt-xl md:p-0 items-center gap-xl"
+    class="primary-nav justify-between grid p-l pt-xl desktop:p-0 items-center gap-xl"
     data-visible="false"
   >
     <nav>
@@ -63,7 +63,7 @@ const links = [
         }
       </ul>
     </nav>
-    <div class="w-full md:max-w-[166px]">
+    <div class="w-full desktop:max-w-[166px]">
       <WhatsappContactButton />
     </div>
   </div>
@@ -72,7 +72,7 @@ const links = [
     id="toggle-menu"
     aria-controls="primary-nav"
     aria-expanded="false"
-    class="md:hidden"
+    class="desktop:hidden"
   >
     <span class="sr-only">Abrir/Cerrar menu</span>
     <div class="w-10 h-10">
@@ -145,7 +145,7 @@ const links = [
     white-space: nowrap;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     .primary-nav {
       position: fixed;
       inset: 0;
