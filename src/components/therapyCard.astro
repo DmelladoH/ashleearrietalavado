@@ -53,12 +53,13 @@ const {
     <details>
       <summary class="text-body font-bold">Cuando acudir</summary>
       <List>
-        <li><p>asdasd</p></li>
-        <li><p>asdasd</p></li>
-        <li><p>asdasd</p></li>
-        <li><p>asdasd</p></li>
-        <li><p>asdasd</p></li>
-        <li><p>asdasd</p></li>
+        {
+          details.map((detail) => (
+            <li>
+              <p>{detail}</p>
+            </li>
+          ))
+        }
       </List>
     </details>
   </div>
