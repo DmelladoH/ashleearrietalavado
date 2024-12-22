@@ -5,25 +5,25 @@ import Rules from "@icons/rules.astro";
 import Starts from "@icons/starts.astro";
 ---
 
-<section
-  class="bg-neutral02 py-xl px-l grid gap-l md:grid-flow-col md:px-xxxl lg:px-[200px]"
->
-  <BenefitCard
-    title="Enfoque personalizado"
-    text="Adapto cada sesión a tus necesidades, respetando tus tiempos y procesos, para que te sientas siempre cómodo/a."
-  >
-    <Rules />
-  </BenefitCard>
-  <BenefitCard
-    title="Cercanía y empatía"
-    text="Se fomenta un entorno de confianza, donde puedes ser tú mismo/a y encontrar apoyo auténtico."
-  >
-    <Heart />
-  </BenefitCard>
-  <BenefitCard
-    title="Formación y experiencia"
-    text="Una sólida base de conocimiento y experiencia garantiza un acompañamiento profesional y efectivo."
-  >
-    <Starts />
-  </BenefitCard>
+<section class="bg-neutral02 py-xl px-l flex justify-center">
+  <div class="grid gap-l md:grid-flow-col desktop:w-[1000px]">
+    <BenefitCard
+      title="Enfoque personalizado"
+      text="Adapto cada sesión a tus necesidades, respetando tus tiempos y procesos, para que te sientas siempre cómodo/a."
+    >
+      <Rules />
+    </BenefitCard>
+    <BenefitCard
+      title="Cercanía y empatía"
+      text="Se fomenta un entorno de confianza, donde puedes ser tú mismo/a y encontrar apoyo auténtico."
+    >
+      <Heart />
+    </BenefitCard>
+    <BenefitCard
+      title="Formación y experiencia"
+      text="Una sólida base de conocimiento y experiencia garantiza un acompañamiento profesional y efectivo."
+    >
+      <Starts />
+    </BenefitCard>
+  </div>
 </section>
