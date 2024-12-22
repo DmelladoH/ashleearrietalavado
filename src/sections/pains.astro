@@ -24,23 +24,28 @@ const pains = [
   <div class="md:col-span-2 order-2 md:order-1">
     <Experience />
   </div>
-  <div class="order-3 md:order-2 px-l py-xxl grid justify-center">
-    <H3>Te puedo ayudar con...</H3>
-    <List class="mt-6">
-      {
-        pains.map((pain) => (
-          <li>
-            <p class="text-bullet leading-bullet">{pain}</p>
-          </li>
-        ))
-      }
-    </List>
+  <div
+    class="order-3 md:order-2 px-l md:pr-[80px] py-xxl md:grid md:justify-end"
+  >
+    <div>
+      <H3>Te puedo ayudar con...</H3>
+      <List class="mt-6">
+        {
+          pains.map((pain) => (
+            <li>
+              <p class="text-bullet leading-bullet">{pain}</p>
+            </li>
+          ))
+        }
+      </List>
+    </div>
   </div>
-  <ResponsiveImage
-    class="order-1 md:order-2"
-    firstColor="bg-neutral02"
-    secondColor="bg-white"
-    imgDesktop={kvFull}
-    imgMobile={kvMobile}
-  />
+  <div class="order-1 md:order-2 grid justify-start md:pl-[80px]">
+    <ResponsiveImage
+      firstColor="bg-neutral02"
+      secondColor="bg-white"
+      imgDesktop={kvFull}
+      imgMobile={kvMobile}
+    />
+  </div>
 </section>

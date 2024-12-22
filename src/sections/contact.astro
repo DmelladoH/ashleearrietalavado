@@ -5,16 +5,18 @@ import WhatsappContactButton from "@components/whatsappContactButton.astro";
 const { title, text } = Astro.props;
 ---
 
-<section class="bg-neutral02 py-xl px-l">
-  <H3 class="mb-4 text-center">
-    {title}
-  </H3>
-  <p class="leading-body text-center mb-8">
-    {text}
-  </p>
-  <div class="flex justify-center">
-    <div class="mt-8 w-full md:max-w-[160px]">
-      <WhatsappContactButton />
+<section class="bg-neutral02 py-xl px-l flex justify-center">
+  <div class="max-w-[600px]">
+    <H3 class="mb-4 text-center">
+      {title}
+    </H3>
+    <p class="leading-body text-center mb-8">
+      {text}
+    </p>
+    <div class="flex justify-center">
+      <div class="mt-8 w-full md:max-w-[160px]">
+        <WhatsappContactButton />
+      </div>
     </div>
   </div>
 </section>
