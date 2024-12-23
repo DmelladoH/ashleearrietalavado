@@ -17,14 +17,14 @@ const {
 
 <article
   id={title}
-  class="border-2 border-main06 rounded-default pb-m h-full flex flex-col"
+  class="border-2 border-main06 rounded-default h-full flex flex-col"
 >
   <header class="py-m px-l bg-main06 text-white">
     <p class="text-h4 font-medium leading-h4">Terapia</p>
     <H2>{title}</H2>
   </header>
-  <div class="flex flex-col px-l pt-l flex-grow">
-    <div class="flex-grow">
+  <div class="flex flex-col px-l py-l justify-between">
+    <div class="">
       <div class="grid gap-xs">
         <TherapyInfo
           title="Sesión presencial"
@@ -44,15 +44,15 @@ const {
           )
         }
       </div>
-      <div class="">
-        <p class="text-body leading-body mt-6 mb-4">
+      <div class="mt-6 mb-4 h-[179px]">
+        <p class="text-body leading-body">
           {description}
         </p>
       </div>
     </div>
     <details>
       <summary class="text-body font-bold">Cuando acudir</summary>
-      <List>
+      <List class="mt-6">
         {
           details.map((detail) => (
             <li>
@@ -83,5 +83,19 @@ const {
   }
   details[open] summary:after {
     background: url("/chevron_up.svg") center no-repeat;
+  }
+
+  article {
+    min-height: 548px;
+  }
+
+  details[open] ~ article {
+    max-height: none; /* Removes height restriction when details are open */
+  }
+
+  @media (min-width: 400px) {
+    article {
+      min-height: 526px;
+    }
   }
 </style>
