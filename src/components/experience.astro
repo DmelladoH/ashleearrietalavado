@@ -1,107 +1,43 @@
 ---
 import H4 from "@components/h4.astro";
-import deusto from "@pictures/experience/deusto.png";
-import colegioPsicologiaBizkaia from "@pictures/experience/colegio-psicologia-bizkaia.png";
-import medicosBilvao from "@pictures/experience/medicos-bilvao.png";
-import siac from "@pictures/experience/siac.png";
-import gac from "@pictures/experience/gac.png";
-import viu from "@pictures/experience/viu.png";
-
-import { getImage } from "astro:assets";
-
-const width = 96;
-const height = 40;
-
-const experienceImgLinks = await Promise.all([
-  getImage({
-    src: deusto,
-    format: "webp",
-    width,
-    height,
-  }).then((img) => ({
-    link: img.src,
-    name: "Deusto",
-  })),
-  getImage({
-    src: colegioPsicologiaBizkaia,
-    format: "webp",
-    width,
-    height,
-  }).then((img) => ({
-    link: img.src,
-    name: "Colegio de Psicología de Bizkaia",
-  })),
-  getImage({
-    src: medicosBilvao,
-    format: "webp",
-    width,
-    height,
-  }).then((img) => ({
-    link: img.src,
-    name: "Centro de Especialistas Médicos Bilbao, pediatría y adultos",
-  })),
-  getImage({
-    src: siac,
-    format: "webp",
-    width,
-    height,
-  }).then((img) => ({
-    link: img.src,
-    name: "SIAC",
-  })),
-  getImage({
-    src: gac,
-    format: "webp",
-    width,
-    height,
-  }).then((img) => ({
-    link: img.src,
-    name: "GAC, Grupo ALBOR-COHS",
-  })),
-  getImage({
-    src: viu,
-    format: "webp",
-    width,
-    height,
-  }).then((img) => ({
-    link: img.src,
-    name: "VIU, Universidad Internacional de Valencia",
-  })),
-]);
+import { experienceImgLinks } from "@content/experience";
 ---
 
-<div class="px-l py-xl md:px-xxxl lg:px-[240px] order-2">
+<div class="px-l desktop:py-xxxl py-xxl gap-s grid justify-center">
   <H4 class="text-center font-medium">Mi experiencia está reconocida por…</H4>
   <div class="w-full flex flex-col mt-8">
-    <ul class="gallery">
-      {
-        experienceImgLinks.map((image) => (
-          <li class="flex justify-center items-center">
-            <img
-              src={image.link}
-              alt={image.name}
-              loading="lazy"
-              class="max-w-full h-auto md:w-[115px] md:h-[48px]"
-            />
-          </li>
-        ))
-      }
-    </ul>
+    <div class="grid w-full justify-center">
+      <ul class="gallery w-full desktop:w-[1200px]">
+        {
+          experienceImgLinks.map((image) => (
+            <li class="flex justify-center items-center">
+              <img
+                src={image.link}
+                alt={image.name}
+                loading="lazy"
+                class="max-w-full h-auto md:w-[115px] md:h-[48px]"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
+
+  <style>
+    .gallery {
+      display: flex;
+      /* grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); */
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  </style>
 </div>
-
-<style>
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 1rem;
-    justify-items: center;
-    align-items: center;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-</style>

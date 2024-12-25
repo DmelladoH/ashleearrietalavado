@@ -8,7 +8,8 @@
       "@icons/*": ["src/assets/icons/*"],
       "@pictures/*": ["src/assets/pictures/*"],
       "@sections/*": ["src/sections/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@content/*": ["src/content/*"]
     }
   }
 }
