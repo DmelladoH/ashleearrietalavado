@@ -2,10 +2,10 @@
 const { ...props } = Astro.props;
 ---
 
-<button
+<a
   {...props}
   class="bg-action05 hover:bg-action04 active:bg-action06 py-[12px] px-l w-full text-white rounded-rounded flex gap-s justify-center align-middle"
 >
   <slot name="icon" />
   <slot name="text" />
-</button>
+</a>

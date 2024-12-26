@@ -18,6 +18,7 @@ import { personalData } from "@content/personalData";
       <a
         href={personalData.socialMedia.instagram}
         aria-label="perfil de Instagram"
+        target="_blank"
         class="w-6 h-6"
       >
         <Instagram />
@@ -25,6 +26,7 @@ import { personalData } from "@content/personalData";
       <a
         href={personalData.socialMedia.linkedin}
         aria-label="perfil de LinkedIn"
+        target="_blank"
         class="w-6 h-6"
       >
         <Linkedn />
@@ -32,6 +34,7 @@ import { personalData } from "@content/personalData";
       <a
         href={personalData.socialMedia.doctoralia}
         aria-label="perfil de Doctoralia"
+        target="_blank"
         class="w-6 h-6"
       >
         <Doctoralia />
@@ -41,9 +44,16 @@ import { personalData } from "@content/personalData";
   <div class="grid gap-m desktop:order-1 desktop:row-span-2">
     <span class="text-info font-bold leading-info">Contacto</span>
     <div class="grid gap-xs desktop:gap-xs text-info font-normal leading-info">
-      <a href={`tel:${personalData.phone}`} class="">{personalData.phone}</a>
-      <a href={`mailto:${personalData.email}`}>{personalData.email}</a>
-      <a href="">{personalData.address}</a>
+      <a href={`tel:${personalData.phone}`} target="_blank"
+        >{personalData.phone}</a
+      >
+      <a href={`mailto:${personalData.email}`} target="_blank"
+        >{personalData.email}</a
+      >
+      <a
+        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalData.address)}`}
+        target="_blank">{personalData.address}</a
+      >
     </div>
   </div>
   <div class="grid gap-m desktop:order-3 desktop:gap-xs">
