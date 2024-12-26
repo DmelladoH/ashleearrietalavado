@@ -18,13 +18,14 @@ const {
 <article
   id={title}
   class="border-2 border-main06 rounded-default h-full flex flex-col"
+  aria-label={`Therapy card for ${title}`}
 >
   <header class="py-m px-l bg-main06 text-white">
     <p class="text-h4 font-medium leading-h4">Terapia</p>
     <H2>{title}</H2>
   </header>
-  <div class="flex flex-col px-l py-l justify-between">
-    <div class="">
+  <div class="flex flex-col px-l py-l">
+    <div class="mb-4">
       <div class="grid gap-xs">
         <TherapyInfo
           title="Sesión presencial"
@@ -44,14 +45,16 @@ const {
           )
         }
       </div>
-      <div class="mt-6 mb-4 h-[179px]">
+      <div class="mt-6 h-[201px]">
         <p class="text-body leading-body">
           {description}
         </p>
       </div>
     </div>
     <details>
-      <summary class="text-body font-bold">Cuando acudir</summary>
+      <summary class="text-body font-bold cursor-pointer">
+        Cuando acudir
+      </summary>
       <List class="mt-6">
         {
           details.map((detail) => (
@@ -66,36 +69,37 @@ const {
 </article>
 
 <style>
+  article {
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+  }
+
   details > summary {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
+
   summary::-webkit-details-marker {
     display: none;
   }
 
   summary::after {
-    background: url("/chevron_down.svg") center no-repeat;
     content: "";
-    color: transparent;
+    background: url("/chevron_down.svg") center no-repeat;
     width: 24px;
+    height: 24px;
   }
-  details[open] summary:after {
+
+  details[open] summary::after {
     background: url("/chevron_up.svg") center no-repeat;
-  }
-
-  article {
-    min-height: 548px;
-  }
-
-  details[open] ~ article {
-    max-height: none; /* Removes height restriction when details are open */
   }
 
   @media (min-width: 400px) {
     article {
-      min-height: 526px;
+      min-height: 550px;
     }
   }
 </style>
