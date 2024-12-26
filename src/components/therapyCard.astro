@@ -31,9 +31,11 @@ const {
   class="border-2 border-main06 rounded-default h-full flex flex-col"
   aria-label={`Therapy card for ${title}`}
 >
-  <header class="py-m px-l bg-main06 text-white">
-    <p class="text-h4 font-medium leading-h4">Terapia</p>
-    <H2>{title}</H2>
+  <header class="py-m px-l bg-main06 text-white flex">
+    <div class="flex-grow">
+      <p class="text-h4 font-medium leading-h4">Terapia</p>
+      <H2>{title}</H2>
+    </div>
   </header>
   <div class="flex flex-col px-l py-l">
     <div class="mb-4">

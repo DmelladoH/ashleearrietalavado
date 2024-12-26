@@ -5,7 +5,7 @@ const { title, text } = Astro.props;
 ---
 
 <div>
-  <div class="flex gap-s md:flex-col">
+  <div class="flex gap-s desktop:flex-col">
     <div class="min-h-10 min-w-10 max-w-10 max-h-10">
       <slot />
     </div>
@@ -13,7 +13,7 @@ const { title, text } = Astro.props;
       <H3>
         {title}
       </H3>
-      <p class="leading-body mt-2">
+      <p class="leading-body mt-2 text-body font-normal">
         {text}
       </p>
     </div>

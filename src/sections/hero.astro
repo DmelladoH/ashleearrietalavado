@@ -4,28 +4,27 @@ import ResponsiveImage from "@components/responsiveImage.astro";
 import WhatsappContactButton from "@components/whatsappContactButton.astro";
 import hero from "@pictures/hero.png";
 import heroMobil from "@pictures/hero-mobile.png";
+import H2 from "@components/h2.astro";
 ---
 
-<section
-  class="bg-accent03 md:py-xxxl md:px-xxxl grid md:grid-flow-col md:gap-xl"
->
-  <div class="grid gap-xs px-l md:px-0 max-w-[700px] pb-l pt-xl">
-    <H1>Conoce el Centro de Psicología Ashlee Arrieta Lavado</H1>
-    <h2 class="text-h3 leading-h3 font-bold">
-      Acompañándote en tu camino hacia el bienestar emocional.
-    </h2>
-    <p class="text-body font-normal leading-body">
-      Un espacio seguro y acogedor donde encontrarás la empatía y comprensión
-      que necesitas durante tú proceso de crecimiento vital.
-    </p>
-    <div class="mt-8 max-w-[160px]">
-      <WhatsappContactButton />
+<section class="bg-accent03 flex justify-center">
+  <div class="grid md:grid-flow-col md:gap-xl md:py-xxxl max-w-[1182px]">
+    <div class="grid gap-xs px-l max-w-[752px] pb-l pt-xl">
+      <H1>Conoce el Centro de Psicología Ashlee Arrieta Lavado</H1>
+      <H2>Acompañándote en tu camino hacia el bienestar emocional.</H2>
+      <p class="text-body font-normal leading-body">
+        Un espacio seguro y acogedor donde encontrarás la empatía y comprensión
+        que necesitas durante tú proceso de crecimiento vital.
+      </p>
+      <div class="mt-8 max-w-[160px]">
+        <WhatsappContactButton />
+      </div>
     </div>
+    <ResponsiveImage
+      firstColor="bg-accent03"
+      secondColor="bg-white"
+      imgDesktop={hero}
+      imgMobile={heroMobil}
+    />
   </div>
-  <ResponsiveImage
-    firstColor="bg-accent03"
-    secondColor="bg-white"
-    imgDesktop={hero}
-    imgMobile={heroMobil}
-  />
 </section>

@@ -1,35 +1,40 @@
 ---
-import H2 from "@components/h2.astro";
-import H3 from "@components/h3.astro";
 import ResponsiveImage from "@components/responsiveImage.astro";
 import Contact from "@sections/contact.astro";
 import Layout from "src/layouts/Layout.astro";
 
 import kvSecondaryFull from "@pictures/kv-secondary-full.png";
-import kvSecondaryMobile from "@pictures/kv-mobile.png";
+import kvSecondaryMobile from "@pictures/kv-secondary-mobile.png";
 ---
 
 <Layout>
-  <section class="pt-xxxl gap-xxxl md:px-xxxl mb-24 grid md:grid-flow-col">
-    <div class="grid gap-s px-l">
-      <H2>Servicios para Empresas y Centros Educativos</H2>
-      <H3>
+  <section
+    class="md:py-xxxl md:px-xxxl grid md:grid-flow-col md:gap-xl md:justify-center"
+  >
+    <div class="grid gap-xs px-l md:px-0 max-w-[630px] py-xxxl desktop:py-0">
+      <h1 class="font-bold text-h2 leading-h2">
+        Servicios para Empresas y Centros Educativos
+      </h1>
+      <h2 class="text-h3 font-bold leading-h3">
         Charlas y dinámicas para impulsar el bienestar y la cohesión en tu
         equipo.
-      </H3>
+      </h2>
       <p class="leading-body">
         Trabajo con Centros Educativos, Centros de Integración Social, Empresas
-        y asociaciones. Ya sea mediante talleres, charlas o sesiones con
-        diversas temáticas, <span>me adapto a las necesidades de tu equipo</span
-        >, ayudándoos a conectar y desarrollaros en un entorno de confianza.
+        y asociaciones.
       </p>
       <p class="leading-body">
+        Ya sea mediante talleres, charlas o sesiones con diversas temáticas, <span
+          >me adapto a las necesidades de tu equipo</span
+        >, ayudándoos a conectar y desarrollaros en un entorno de confianza.
+      </p>
+      <p class="leading-body mt-3">
         No dudes en contactarme para contarme vuestra situación y encontraremos
         la mejor manera de crecer juntos/as.
       </p>
     </div>
     <ResponsiveImage
-      class="h-[286px] md:px-xl"
+      class="flex items-center justify-center align-middle h-[340px] desktop:h-auto"
       imgDesktop={kvSecondaryFull}
       imgMobile={kvSecondaryMobile}
     />

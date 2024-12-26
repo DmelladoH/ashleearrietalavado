@@ -6,7 +6,9 @@ import { therapies } from "src/content/therapies";
 ---
 
 <section class="md:px-xxxl py-xl">
-  <H4 class="font-medium px-l">Escoje la terapia que mejor se adapte a ti:</H4>
+  <H4 class="font-medium px-[40px]"
+    >Escoje la terapia que mejor se adapte a ti:</H4
+  >
   <div class="flex mt-8">
     <div class="flex items-center p-s">
       <button
@@ -75,7 +77,7 @@ import { therapies } from "src/content/therapies";
 
   new Swiper(".swiper", {
     slidesPerView: 1,
-    spaceBetween: 40,
+    spaceBetween: 16,
     navigation: {
       prevEl: ".swiper-button-prev-unique",
       nextEl: ".swiper-button-next-unique",
@@ -83,15 +85,15 @@ import { therapies } from "src/content/therapies";
     breakpoints: {
       20: {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 16,
       },
       580: {
         slidesPerView: 2,
-        spaceBetween: 40,
+        spaceBetween: 16,
       },
       1200: {
         slidesPerView: 3,
-        spaceBetween: 40,
+        spaceBetween: 16,
       },
     },
   });
