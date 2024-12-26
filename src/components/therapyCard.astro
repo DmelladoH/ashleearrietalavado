@@ -3,6 +3,17 @@ import H2 from "./h2.astro";
 import List from "./list.astro";
 import TherapyInfo from "./therapyInfo.astro";
 
+interface TherapyCardProps {
+  title: string;
+  onlinePrice: string;
+  onlineTimeInMinutes: number;
+  inPersonPrice: string;
+  inPersonTimeInMinutes: number;
+  description: string;
+  details: string[];
+  priceDisclaimer?: string;
+}
+
 const {
   title,
   onlinePrice,
@@ -12,7 +23,7 @@ const {
   description,
   details,
   priceDisclaimer,
-} = Astro.props;
+} = Astro.props as TherapyCardProps;
 ---
 
 <article

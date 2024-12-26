@@ -4,7 +4,15 @@ import BadgeSmall from "./badgeSmall.astro";
 import H3 from "./h3.astro";
 import List from "./list.astro";
 
-const { id, title, price, time, details } = Astro.props;
+interface SummaryTherapyCardProps {
+  id: string;
+  title: string;
+  price: string;
+  time: number;
+  details: string[];
+}
+const { id, title, price, time, details } =
+  Astro.props as SummaryTherapyCardProps;
 ---
 
 <article
