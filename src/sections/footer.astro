@@ -8,9 +8,9 @@ import { personalData } from "@content/personalData";
 ---
 
 <footer
-  class="bg-neutral08 md:items-start md:py-xxl md:gap-y-[0px] md:px-xxxl p-l pb-xxxl text-white grid gap-xl md:grid-cols-2"
+  class="bg-neutral08 desktop:items-start desktop:py-xxl desktop:gap-y-[0px] desktop:px-xxxl p-l pb-xxxl text-white grid gap-xl desktop:grid-cols-2"
 >
-  <div class="flex justify-between md:flex-row-reverse md:order-2">
+  <div class="flex justify-between desktop:flex-row-reverse desktop:order-2">
     <a href="/" aria-label="Ir inicio página" class="w-8 h-12">
       <LogoBlackAndWhite />
     </a>
@@ -38,15 +38,15 @@ import { personalData } from "@content/personalData";
       </a>
     </div>
   </div>
-  <div class="grid gap-m md:order-1 md:row-span-2">
+  <div class="grid gap-m desktop:order-1 desktop:row-span-2">
     <span class="text-info font-bold leading-info">Contacto</span>
-    <div class="grid gap-xs md:gap-xs text-info font-normal leading-info">
+    <div class="grid gap-xs desktop:gap-xs text-info font-normal leading-info">
       <a href={`tel:${personalData.phone}`} class="">{personalData.phone}</a>
       <a href={`mailto:${personalData.email}`}>{personalData.email}</a>
       <a href="">{personalData.address}</a>
     </div>
   </div>
-  <div class="grid gap-m md:order-3 md:gap-xs">
+  <div class="grid gap-m desktop:order-3 desktop:gap-xs">
     <span class="text-info font-bold leading-info">{personalData.fullname}</span
     >
     <p class="text-info font-normal leading-info">

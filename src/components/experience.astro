@@ -3,7 +3,7 @@ import H4 from "@components/h4.astro";
 import { experienceImgLinks } from "@content/experience";
 ---
 
-<div class="px-l desktop:py-xxxl py-xxl gap-s grid justify-center">
+<div class="px-l desktop:py-xxl py-xl gap-s grid justify-center">
   <H4 class="text-center font-medium px-[1px] desktop:p-x-0"
     >Mi experiencia está reconocida por…</H4
   >
@@ -17,7 +17,7 @@ import { experienceImgLinks } from "@content/experience";
                 src={image.link}
                 alt={image.name}
                 loading="lazy"
-                class="max-w-full h-auto md:w-[115px] md:h-[48px]"
+                class="max-w-full h-auto desktop:w-[115px] desktop:h-[48px]"
               />
             </li>
           ))

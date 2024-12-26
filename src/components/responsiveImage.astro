@@ -26,15 +26,15 @@ const desktopImg = await getImage({
 ---
 
 <div class={`relative h-[400px] ${className || ""}`} {...otherProps}>
-  <div class={`${firstColor} h-[50%] md:hidden`}></div>
-  <div class={`${secondColor} h-[50%] md:hidden`}></div>
+  <div class={`${firstColor} h-[50%] desktop:hidden`}></div>
+  <div class={`${secondColor} h-[50%] desktop:hidden`}></div>
   <picture class="flex justify-center">
     <source media="(min-width: 400px)" srcset={desktopImg.src} />
     <source media="(max-width: 400px)" srcset={mobileImage.src} />
     <img
       src={desktopImg.src}
       alt=""
-      class="absolute md:relative top-0 left-0 w-full m-auto right-0 md:m-0 md:w-auto"
+      class="absolute desktop:relative top-0 left-0 w-full m-auto right-0 desktop:m-0 desktop:w-auto"
     />
   </picture>
 </div>
