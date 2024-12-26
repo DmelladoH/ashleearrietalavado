@@ -94,7 +94,7 @@ export const therapies = [
     inPersonPrice: 70,
     inPersonTimeInMinutes: 50,
     description:
-      "En nuestro centro se tiene en cuenta esta etapa vital, ya que se considera que es igual de relevante, debido a los cambios asociados a la edad. Por ello, buscamos ofrecer un espacio en el que brindar un espacio de escucha activa, comprensión y validación. Asimismo, se trabaja con estimulación cognitiva.",
+      "Valoro la importancia de esta etapa vital y los cambios asociados a ella. Ofrezco un espacio de escucha activa, comprensión y validación, trabajando también con estimulación cognitiva.",
     details: [
       "Manejo del autoestima.",
       "Tratamiento de trastornos (ansiedad, estrés, depresión).",
