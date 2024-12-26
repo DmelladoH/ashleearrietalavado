@@ -3,6 +3,8 @@ import Doctoralia from "@icons/doctoralia.astro";
 import Instagram from "@icons/instagram.astro";
 import Linkedn from "@icons/linkedn.astro";
 import LogoBlackAndWhite from "@icons/logoBlackAndWhite.astro";
+
+import { personalData } from "@content/personalData";
 ---
 
 <footer
@@ -13,13 +15,25 @@ import LogoBlackAndWhite from "@icons/logoBlackAndWhite.astro";
       <LogoBlackAndWhite />
     </a>
     <div class="flex gap-s">
-      <a href="#" aria-label="perfil de Instagram" class="w-6 h-6">
+      <a
+        href={personalData.socialMedia.instagram}
+        aria-label="perfil de Instagram"
+        class="w-6 h-6"
+      >
         <Instagram />
       </a>
-      <a href="#" aria-label="perfil de LinkedIn" class="w-6 h-6">
+      <a
+        href={personalData.socialMedia.linkedin}
+        aria-label="perfil de LinkedIn"
+        class="w-6 h-6"
+      >
         <Linkedn />
       </a>
-      <a href="#" aria-label="perfil de Doctoralia" class="w-6 h-6">
+      <a
+        href={personalData.socialMedia.doctoralia}
+        aria-label="perfil de Doctoralia"
+        class="w-6 h-6"
+      >
         <Doctoralia />
       </a>
     </div>
@@ -27,15 +41,16 @@ import LogoBlackAndWhite from "@icons/logoBlackAndWhite.astro";
   <div class="grid gap-m md:order-1 md:row-span-2">
     <span class="text-info font-bold leading-info">Contacto</span>
     <div class="grid gap-xs md:gap-xs text-info font-normal leading-info">
-      <a href="tel:234523452345" class="">23452345</a>
-      <a href="mailto:a@a.com">a@a.com</a>
-      <a href="">Gran Vía Don Diego López de Haro 81, Planta 3ª - Bilbao</a>
+      <a href={`tel:${personalData.phone}`} class="">{personalData.phone}</a>
+      <a href={`mailto:${personalData.email}`}>{personalData.email}</a>
+      <a href="">{personalData.address}</a>
     </div>
   </div>
   <div class="grid gap-m md:order-3 md:gap-xs">
-    <span class="text-info font-bold leading-info">Ashlee Arrieta Lavado</span>
+    <span class="text-info font-bold leading-info">{personalData.fullname}</span
+    >
     <p class="text-info font-normal leading-info">
-      Colegiada Nº XXX en el Colegio de Psicología de Bizkaia
+      {personalData.psychologistNumber}
     </p>
   </div>
 </footer>
