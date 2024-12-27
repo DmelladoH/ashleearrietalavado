@@ -77,26 +77,28 @@ import { therapies } from "src/content/therapies";
 <script type="module">
   import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 
-  new Swiper(".swiper", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    navigation: {
-      prevEl: ".swiper-button-prev-unique",
-      nextEl: ".swiper-button-next-unique",
-    },
-    breakpoints: {
-      20: {
-        slidesPerView: 1,
-        spaceBetween: 16,
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".swiper", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        prevEl: ".swiper-button-prev-unique",
+        nextEl: ".swiper-button-next-unique",
       },
-      500: {
-        slidesPerView: 2,
-        spaceBetween: 16,
+      breakpoints: {
+        20: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        },
+        500: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        800: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+        },
       },
-      800: {
-        slidesPerView: 3,
-        spaceBetween: 16,
-      },
-    },
+    });
   });
 </script>

@@ -1,24 +1,24 @@
 ---
 import Footer from "@sections/footer.astro";
 import Header from "@sections/header.astro";
+import { siteData } from "@content/siteData";
+import Seo from "@components/seo.astro";
+
+const { title, description, canonical, image } = siteData;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <Seo
+      title={title}
+      description={description}
+      canonical={canonical}
+      image={image}
+    />
+    <!--Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Ashlee Arrieta Lavado</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Ashlee Arrieta Lavado" />
   </head>
   <body class="bg-white text-main09">
     <Header />
@@ -34,7 +34,6 @@ import Header from "@sections/header.astro";
   *::before,
   *::after {
     box-sizing: border-box;
-    /* outline: 2px solid lime; */
   }
   html {
     scroll-padding-top: 100px; /* Adjust this value to match your header's height */
