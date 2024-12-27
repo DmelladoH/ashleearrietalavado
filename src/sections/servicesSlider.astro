@@ -5,43 +5,45 @@ import ChevronRight from "@icons/chevronRight.astro";
 import { therapies } from "src/content/therapies";
 ---
 
-<section class="desktop:px-xxxl py-xl">
-  <H4 class="font-medium px-[40px]"
-    >Escoje la terapia que mejor se adapte a ti:</H4
-  >
-  <div class="flex mt-8">
-    <div class="flex items-center p-s">
-      <button
-        class="swiper-button-prev-unique"
-        aria-label="mover carrusel a la izquierda"
-      >
-        <ChevronRight class="rotate-180" />
-      </button>
-    </div>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        {
-          therapies.map((card) => (
-            <li class="swiper-slide">
-              <SummaryTherapyCard
-                id={card.title}
-                title={`Terapia ${card.title}`}
-                price={card.inPersonPrice}
-                time={card.inPersonTimeInMinutes}
-                details={card.summaryDetails}
-              />
-            </li>
-          ))
-        }
+<section class="desktop:px-xxxl py-xl desktop:flex desktop:justify-center">
+  <div class="px-l max-w-0 desktop:max-w-[1000px]">
+    <H4 class="font-medium px-[40px]"
+      >Escoje la terapia que mejor se adapte a ti:</H4
+    >
+    <div class="flex mt-8">
+      <div class="flex items-center p-s">
+        <button
+          class="swiper-button-prev-unique"
+          aria-label="mover carrusel a la izquierda"
+        >
+          <ChevronRight class="rotate-180" />
+        </button>
       </div>
-    </div>
-    <div class="flex items-center p-s">
-      <button
-        class="swiper-button-next-unique"
-        aria-label="mover carrusel a la derecha"
-      >
-        <ChevronRight />
-      </button>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {
+            therapies.map((card) => (
+              <li class="swiper-slide">
+                <SummaryTherapyCard
+                  id={card.title}
+                  title={`Terapia ${card.title}`}
+                  price={card.inPersonPrice}
+                  time={card.inPersonTimeInMinutes}
+                  details={card.summaryDetails}
+                />
+              </li>
+            ))
+          }
+        </div>
+      </div>
+      <div class="flex items-center p-s">
+        <button
+          class="swiper-button-next-unique"
+          aria-label="mover carrusel a la derecha"
+        >
+          <ChevronRight />
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -87,11 +89,11 @@ import { therapies } from "src/content/therapies";
         slidesPerView: 1,
         spaceBetween: 16,
       },
-      580: {
+      500: {
         slidesPerView: 2,
         spaceBetween: 16,
       },
-      1200: {
+      800: {
         slidesPerView: 3,
         spaceBetween: 16,
       },

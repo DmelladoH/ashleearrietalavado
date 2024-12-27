@@ -16,16 +16,20 @@ import Layout from "src/layouts/Layout.astro";
       necesidades.
     </p>
   </section>
-  <section class="px-l py-xl desktop:px-xxxl desktop:py-xxl">
-    <ul class="gallery desktop:gap-y-[112px] gap-s">
-      {
-        therapies.map((card) => (
-          <li class="">
-            <TherapyCard {...card} />
-          </li>
-        ))
-      }
-    </ul>
+  <section
+    class="px-l py-xl desktop:px-xxxl desktop:py-xxl flex justify-center"
+  >
+    <div class="desktop:max-w-[1000px]">
+      <ul class="gallery desktop:gap-y-[112px] gap-s">
+        {
+          therapies.map((card) => (
+            <li class="">
+              <TherapyCard {...card} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </section>
   <Contact
     title="¿Damos el primer paso?"
