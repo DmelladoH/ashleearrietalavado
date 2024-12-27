@@ -31,7 +31,7 @@ const links = [
   class="bg-white py-l px-l desktop:px-xxl justify-between flex items-center drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)] fixed w-full z-50"
 >
   <div>
-    <a href="/" aria-label="ir a página principal">
+    <a href="/" aria-label="ir a la página principal">
       <div id="long-icon" class="icon h-12 w-[133px]" data-visible="true">
         <LogoWithTitle />
       </div>
@@ -50,14 +50,16 @@ const links = [
     class="primary-nav justify-between grid p-l pt-xl desktop:p-0 items-center gap-xl"
     data-visible="false"
   >
-    <nav>
+    <nav aria-label="Navegación principal">
       <ul>
         {
           links.map((link) => (
             <li
               class={`${link.active ? "text-action04 border-b-2 border-b-action04" : ""} border-b-2 border-white p-s`}
             >
-              <a href={link.href}>{link.name}</a>
+              <a href={link.href} aria-label={`Ir a ${link.name}`}>
+                {link.name}
+              </a>
             </li>
           ))
         }

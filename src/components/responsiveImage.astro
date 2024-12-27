@@ -7,6 +7,7 @@ const {
   secondColor,
   imgDesktop,
   imgMobile,
+  alt = "",
   ...otherProps
 } = Astro.props;
 
@@ -33,7 +34,7 @@ const desktopImg = await getImage({
     <source media="(max-width: 400px)" srcset={mobileImage.src} />
     <img
       src={desktopImg.src}
-      alt=""
+      alt={alt}
       class="absolute desktop:relative top-0 left-0 w-full m-auto right-0 desktop:m-0 desktop:w-auto"
     />
   </picture>
