@@ -1,4 +1,4 @@
-![Ashlee Arrieta Lavado](logo.png)
+![Ashlee Arrieta Lavado](logo-readme.png)
 
 # Ashlee Arrieta Lavado
 
