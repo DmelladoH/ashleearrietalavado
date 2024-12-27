@@ -1,4 +1,6 @@
-![Ashlee Arrieta Lavado](logo-readme.png)
+<p align="center">
+  <img src="logo-readme.png" alt="Ashlee Arrieta Lavado">
+</p>
 
 # Ashlee Arrieta Lavado
 
