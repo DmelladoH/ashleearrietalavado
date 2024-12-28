@@ -1,6 +1,6 @@
 import { getImage } from "astro:assets";
 import deusto from "@pictures/experience/deusto.png";
-import colegioPsicologiaBizkaia from "@pictures/experience/colegio-psicologia-bizkaia.png";
+import cop from "@pictures/experience/cop.svg";
 import medicosBilvao from "@pictures/experience/medicos-bilvao.png";
 import siac from "@pictures/experience/siac.png";
 import gac from "@pictures/experience/gac.png";
@@ -20,8 +20,7 @@ export const experienceImgLinks = await Promise.all([
     name: "Deusto",
   })),
   getImage({
-    src: colegioPsicologiaBizkaia,
-    format: "webp",
+    src: cop,
     width,
     height,
   }).then((img) => ({
