@@ -14,14 +14,14 @@ const {
 const mobileImage = await getImage({
   src: imgMobile,
   format: "webp",
-  widths: [375, 750], // Standard and 2x resolution for mobile
+  width: 375,
   height: 429,
 });
 
 const desktopImg = await getImage({
   src: imgDesktop,
   format: "webp",
-  widths: [448, 896], // Standard and 2x resolution for desktop
+  width: 448,
   height: 474,
 });
 ---
@@ -35,6 +35,8 @@ const desktopImg = await getImage({
     <img
       src={desktopImg.src}
       alt={alt}
+      width="448"
+      height="474"
       class="absolute desktop:relative top-0 left-0 w-full m-auto right-0 desktop:m-0 desktop:w-auto"
     />
   </picture>

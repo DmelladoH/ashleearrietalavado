@@ -23,7 +23,7 @@ import { therapies } from "src/content/therapies";
         <div class="swiper-wrapper">
           {
             therapies.map((card) => (
-              <li class="swiper-slide">
+              <div class="swiper-slide">
                 <SummaryTherapyCard
                   id={card.title}
                   title={`Terapia ${card.title}`}
@@ -31,7 +31,7 @@ import { therapies } from "src/content/therapies";
                   time={card.inPersonTimeInMinutes}
                   details={card.summaryDetails}
                 />
-              </li>
+              </div>
             ))
           }
         </div>
