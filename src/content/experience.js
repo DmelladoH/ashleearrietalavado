@@ -6,8 +6,8 @@ import siac from "@pictures/experience/siac.png";
 import gac from "@pictures/experience/gac.png";
 import viu from "@pictures/experience/viu.png";
 
-const width = 96;
-const height = 40;
+const width = 296;
+const height = 240;
 
 export const experienceImgLinks = await Promise.all([
   getImage({

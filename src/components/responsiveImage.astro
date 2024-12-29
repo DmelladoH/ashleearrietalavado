@@ -8,21 +8,22 @@ const {
   imgDesktop,
   imgMobile,
   alt = "",
+  lazy = false,
   ...otherProps
 } = Astro.props;
 
 const mobileImage = await getImage({
   src: imgMobile,
   format: "webp",
-  width: 375,
-  height: 429,
+  width: 1375,
+  height: 1429,
 });
 
 const desktopImg = await getImage({
   src: imgDesktop,
   format: "webp",
-  width: 448,
-  height: 474,
+  width: 1448,
+  height: 1474,
 });
 ---
 
@@ -35,8 +36,9 @@ const desktopImg = await getImage({
     <img
       src={desktopImg.src}
       alt={alt}
-      width="448"
-      height="474"
+      width="1448"
+      height="1474"
+      loading={lazy ? "lazy" : "eager"}
       class="absolute desktop:relative top-0 left-0 w-full m-auto right-0 desktop:m-0 desktop:w-auto"
     />
   </picture>
