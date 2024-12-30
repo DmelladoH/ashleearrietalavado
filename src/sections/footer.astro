@@ -50,9 +50,8 @@ import { personalData } from "@content/personalData";
       <a href={`mailto:${personalData.email}`} target="_blank"
         >{personalData.email}</a
       >
-      <a
-        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalData.address)}`}
-        target="_blank">{personalData.address}</a
+      <a href={personalData.addressLink} target="_blank"
+        >{personalData.addressText}</a
       >
     </div>
   </div>
