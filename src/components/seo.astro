@@ -32,7 +32,7 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 />
 
 <!-- Facebook metadata -->
-<meta property="og:image" content={new URL(image, Astro.url).toString()} />
+<meta property="og:image" content={image || ""} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content={title} />
@@ -49,7 +49,7 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 <!-- <meta name="twitter:creator" content="@" /> -->
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={new URL(image, Astro.url).toString()} />
+<meta name="twitter:image" content={image || ""} />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
