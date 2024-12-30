@@ -15,13 +15,9 @@ const { id, title, price, time, details } =
   Astro.props as SummaryTherapyCardProps;
 ---
 
-<article
-  class="py-m px-l bg-neutral03 border-main06 border-2 rounded-default h-full"
->
-  <a
-    href=`/terapias#${id}`
-    aria-label=`ver detalles de la terapia ${title}`
-    class="h-full"
+<a href=`/terapias#${id}` aria-label=`ver detalles de la terapia ${title}`>
+  <article
+    class="hover:bg-[#d1e3e0] py-m px-l border-2 rounded-default h-full bg-neutral03 border-main06"
   >
     <div class="flex flex-col h-full">
       <H3>{title}</H3>
@@ -52,5 +48,5 @@ const { id, title, price, time, details } =
         >Saber más</span
       >
     </div>
-  </a>
-</article>
+  </article>
+</a>
