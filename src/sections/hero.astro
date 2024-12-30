@@ -4,7 +4,6 @@ import ResponsiveImage from "@components/responsiveImage.astro";
 import WhatsappContactButton from "@components/whatsappContactButton.astro";
 import hero from "@pictures/hero.png";
 import heroMobil from "@pictures/hero-mobile.png";
-import H2 from "@components/h2.astro";
 ---
 
 <section class="bg-accent03 desktop:flex justify-center">
@@ -13,7 +12,11 @@ import H2 from "@components/h2.astro";
   >
     <div class="grid gap-xs desktop:gap-s px-l max-w-[752px] pb-l pt-xl">
       <H1>Conoce el Centro de Psicología Ashlee Arrieta Lavado</H1>
-      <H2>Acompañándote en tu camino hacia el bienestar emocional.</H2>
+      <h2
+        class="text-h3 desktop:text-h2 font-bold leading-h3 desktop:leading-h2"
+      >
+        Acompañándote en tu camino hacia el bienestar emocional.
+      </h2>
       <p class="text-body font-normal leading-body">
         Un espacio seguro y acogedor donde encontrarás la empatía y comprensión
         que necesitas durante tú proceso de crecimiento vital.

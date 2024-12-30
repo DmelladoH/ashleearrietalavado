@@ -4,7 +4,7 @@ export const personalData = {
   countryPhoneCode: "34",
   email: "centropsicologiaashlee@gmail.com",
   addressText: "Gran Vía Don Diego López de Haro 81, Planta 3ª - Bilbao",
-  addressLink: "https://maps.app.goo.gl/sJoqMDore6ZpUqwE9",
+  addressLink: "https://maps.app.goo.gl/xTvwT6DR2JSByacT9",
   psychologistNumber:
     "Colegiada Nº BI05868 en el Colegio de Psicología de Bizkaia",
   socialMedia: {
