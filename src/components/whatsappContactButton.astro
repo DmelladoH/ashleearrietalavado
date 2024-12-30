@@ -4,7 +4,10 @@ import PrimaryButton from "./primaryButton.astro";
 import { personalData } from "@content/personalData";
 ---
 
-<PrimaryButton href={`https://wa.me/${personalData.phone.replace(/\s+/g, "")}`}>
+<PrimaryButton
+  href={`https://wa.me/${personalData.countryPhoneCode}${personalData.phone.replace(/\s+/g, "")}`}
+  target="_blank"
+>
   <div slot="icon" class="w-6 h-6">
     <Whatsapp />
   </div>
