@@ -3,8 +3,11 @@ import Footer from "@sections/footer.astro";
 import Header from "@sections/header.astro";
 import { siteData } from "@content/siteData";
 import Seo from "@components/seo.astro";
+import { ClientRouter } from "astro:transitions";
 
 const { title, description, canonical, image } = siteData;
+
+import { fade } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -16,11 +19,15 @@ const { title, description, canonical, image } = siteData;
       canonical={canonical}
       image={image}
     />
+    <ClientRouter />
     <!--Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
-  <body class="bg-white text-main09">
+  <body
+    class="bg-white text-main09"
+    transition:animate={fade({ duration: "0.4s" })}
+  >
     <Header />
     <main class="pt-xxxl">
       <slot />
