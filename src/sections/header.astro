@@ -93,41 +93,49 @@ const links = [
 </header>
 
 <script defer>
-  const primaryNav = document.getElementById("primary-nav");
-  const toggleMenuButton = document.getElementById("toggle-menu");
-  const shortIcon = document.getElementById("short-icon");
-  const longIcon = document.getElementById("long-icon");
+  function init() {
+    const primaryNav = document.getElementById("primary-nav");
+    const toggleMenuButton = document.getElementById("toggle-menu");
+    const shortIcon = document.getElementById("short-icon");
+    const longIcon = document.getElementById("long-icon");
 
-  const barsIcon = document.querySelector(".barsIcon");
-  const crossIcon = document.querySelector(".crossIcon");
-  const header = document.getElementById("app-header");
+    const barsIcon = document.querySelector(".barsIcon");
+    const crossIcon = document.querySelector(".crossIcon");
+    const header = document.getElementById("app-header");
 
-  const body = document.querySelector("body");
+    const body = document.querySelector("body");
 
-  toggleMenuButton.addEventListener("click", () => {
-    const isVisible = primaryNav.getAttribute("data-visible") === "true";
+    toggleMenuButton.addEventListener("click", () => {
+      const isVisible = primaryNav.getAttribute("data-visible") === "true";
 
-    if (isVisible) {
-      primaryNav.setAttribute("data-visible", "false");
-      toggleMenuButton.setAttribute("aria-expanded", "false");
-      body.classList.remove("removeScroll");
-      longIcon.setAttribute("data-visible", "true");
-      shortIcon.setAttribute("data-visible", "false");
+      if (isVisible) {
+        primaryNav.setAttribute("data-visible", "false");
+        toggleMenuButton.setAttribute("aria-expanded", "false");
+        body.classList.remove("removeScroll");
+        longIcon.setAttribute("data-visible", "true");
+        shortIcon.setAttribute("data-visible", "false");
 
-      barsIcon.setAttribute("data-visible", "true");
-      crossIcon.setAttribute("data-visible", "false");
-      header.classList.add("drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)]");
-    } else {
-      primaryNav.setAttribute("data-visible", "true");
-      toggleMenuButton.setAttribute("aria-expanded", "true");
-      body.classList.add("removeScroll");
-      longIcon.setAttribute("data-visible", "false");
-      shortIcon.setAttribute("data-visible", "true");
+        barsIcon.setAttribute("data-visible", "true");
+        crossIcon.setAttribute("data-visible", "false");
+        header.classList.add("drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)]");
+      } else {
+        primaryNav.setAttribute("data-visible", "true");
+        toggleMenuButton.setAttribute("aria-expanded", "true");
+        body.classList.add("removeScroll");
+        longIcon.setAttribute("data-visible", "false");
+        shortIcon.setAttribute("data-visible", "true");
 
-      barsIcon.setAttribute("data-visible", "false");
-      crossIcon.setAttribute("data-visible", "true");
-      header.classList.remove("drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)]");
-    }
+        barsIcon.setAttribute("data-visible", "false");
+        crossIcon.setAttribute("data-visible", "true");
+        header.classList.remove(
+          "drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)]",
+        );
+      }
+    });
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    init();
   });
 </script>
 
