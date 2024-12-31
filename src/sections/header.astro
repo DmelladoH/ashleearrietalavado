@@ -6,6 +6,10 @@ import LogoWithTitle from "@icons/logoWithTitle.astro";
 import SimpleLogo from "@icons/simpleLogo.astro";
 
 const { pathname } = Astro.url;
+const normalizedPathName =
+  pathname.length > 1 && pathname.endsWith("/")
+    ? pathname.slice(0, -1)
+    : pathname;
 
 const links = [
   {
@@ -22,7 +26,7 @@ const links = [
   },
 ].map((link) => ({
   ...link,
-  active: pathname === link.href,
+  active: normalizedPathName === link.href,
 }));
 ---
 
