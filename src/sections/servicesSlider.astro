@@ -5,8 +5,8 @@ import ChevronRight from "@icons/chevronRight.astro";
 import { therapies } from "src/content/therapies";
 ---
 
-<section class="desktop:px-xxxl py-xl desktop:flex desktop:justify-center">
-  <div class="max-w-[1000px]">
+<section class="py-xl desktop:flex desktop:justify-center">
+  <div class="wrapper">
     <H4 class="font-medium px-[40px]"
       >Escoje la terapia que mejor se adapte a ti:</H4
     >
@@ -64,6 +64,18 @@ import { therapies } from "src/content/therapies";
     width: 40px;
     height: 40px;
   }
+
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* @media (min-width: 1000px) {
+    .wrapper {
+      max-width: 1100px;
+    }
+  } */
 </style>
 
 <link
@@ -91,7 +103,7 @@ import { therapies } from "src/content/therapies";
           slidesPerView: 1,
           spaceBetween: 16,
         },
-        500: {
+        600: {
           slidesPerView: 2,
           spaceBetween: 16,
         },
