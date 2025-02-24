@@ -38,3 +38,8 @@ Para usar este proyecto, sigue estos pasos:
 - [Astro](https://astro.build/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [pnpm](https://pnpm.io/)
+
+## Design  
+
+- **Designed by:** [Adrián Alonso](https://www.linkedin.com/in/adrian-alonso-design/)
+- **Check out:** [Case Study](https://adriandesign.simple.ink/ashlee-arrieta-lavado-1a41442581bf80ba86bee7b2da3f4331)
