@@ -1,6 +1,6 @@
 ---
-import Clock from "@icons/clock.astro";
 import Badge from "./badge.astro";
+import TimeDisplay from "./ui/timeDisplay.astro";
 
 interface Props {
   title: string;
@@ -16,13 +16,6 @@ const { title, price, disclaimer, timeInMinutes } = Astro.props;
   <p class="text-info font-bold leading-info">{title}</p>
   <div class="flex gap-s align-middle items-center">
     {price ? <Badge price={price} disclaimer={disclaimer} /> : null}
-    <div class="flex gap-xxs">
-      <div class="h-6 w-6">
-        <Clock />
-      </div>
-      <p class="text-info font-light">
-        <span class="text-h4 font-medium text-main09">{timeInMinutes}</span> min
-      </p>
-    </div>
+    <TimeDisplay timeInMinutes={timeInMinutes} />
   </div>
 </div>

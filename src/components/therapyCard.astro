@@ -1,17 +1,19 @@
 ---
-import H2 from "./h2.astro";
+import H2 from "@components/h2.astro";
 import List from "./list.astro";
 import TherapyInfo from "./therapyInfo.astro";
+import TimeDisplay from "./ui/timeDisplay.astro";
 
 interface TherapyCardProps {
   title: string;
-  onlinePrice: string;
+  onlinePrice?: string;
   onlineTimeInMinutes: number;
-  inPersonPrice: string;
+  inPersonPrice?: string;
   inPersonTimeInMinutes: number;
   description: string;
   details: string[];
   priceDisclaimer?: string;
+  displayPrice: boolean;
 }
 
 const {
@@ -23,6 +25,7 @@ const {
   description,
   details,
   priceDisclaimer,
+  displayPrice,
 } = Astro.props as TherapyCardProps;
 ---
 
@@ -40,20 +43,32 @@ const {
   <div class="flex flex-col px-l py-l">
     <div class="mb-4">
       <div class="grid gap-xs">
-        <TherapyInfo
-          title="Sesión presencial"
-          timeInMinutes={inPersonTimeInMinutes}
-        />
-        <TherapyInfo
-          title="Sesión online"
-          timeInMinutes={onlineTimeInMinutes}
-        />
         {
-          priceDisclaimer && (
-            <p class="text-info font-normal">*{priceDisclaimer}</p>
+          displayPrice ? (
+            <>
+              <TherapyInfo
+                title="Sesión presencial"
+                timeInMinutes={inPersonTimeInMinutes}
+                price={inPersonPrice}
+              />
+              <TherapyInfo
+                title="Sesión online"
+                timeInMinutes={onlineTimeInMinutes}
+                price={onlinePrice}
+              />
+              {priceDisclaimer && (
+                <p class="text-info font-normal">*{priceDisclaimer}</p>
+              )}
+            </>
+          ) : (
+            <div class="grid gap-xs">
+              <p class="text-info font-bold leading-info">Duración sesión:</p>
+              <TimeDisplay timeInMinutes={inPersonTimeInMinutes} />
+            </div>
           )
         }
       </div>
+
       <div class="mt-6 h-[201px]">
         <p class="text-body leading-body">
           {description}
@@ -79,7 +94,6 @@ const {
 
 <style>
   article {
-    min-height: 550px;
     display: flex;
     flex-direction: column;
   }
@@ -104,11 +118,5 @@ const {
 
   details[open] summary::after {
     background: url("/chevron_up.svg") center no-repeat;
-  }
-
-  @media (min-width: 400px) {
-    article {
-      min-height: 550px;
-    }
   }
 </style>

@@ -22,8 +22,8 @@ import Layout from "src/layouts/Layout.astro";
       <ul class="gallery desktop:gap-y-[112px] gap-s">
         {
           therapies.map((card) => (
-            <li class="">
-              <TherapyCard {...card} />
+            <li>
+              <TherapyCard displayPrice={false} {...card} />
             </li>
           ))
         }
@@ -42,6 +42,6 @@ import Layout from "src/layouts/Layout.astro";
     grid-auto-rows: auto;
     grid-template-columns: repeat(auto-fill, minmax(327px, 1fr));
     justify-items: center;
-    align-items: start; /* Ensures that items align to the top of the row */
+    align-items: start;
   }
 </style>
