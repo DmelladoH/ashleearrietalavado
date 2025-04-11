@@ -1,5 +1,5 @@
 ---
-import { getImage } from "astro:assets";
+import { getImage } from 'astro:assets';
 
 const {
   class: className,
@@ -7,28 +7,28 @@ const {
   secondColor,
   imgDesktop,
   imgMobile,
-  alt = "",
+  alt = '',
   lazy = false,
   ...otherProps
 } = Astro.props;
 
 const mobileImage = await getImage({
   src: imgMobile,
-  format: "webp",
+  format: 'webp',
   width: 1375,
   height: 1429,
 });
 
 const desktopImg = await getImage({
   src: imgDesktop,
-  format: "webp",
+  format: 'webp',
   width: 1448,
   height: 1474,
 });
 ---
 
 <div
-  class={`relative  h-[400px] desktop:w-[400px] ${className || ""}`}
+  class={`relative  h-[400px] desktop:w-[400px] ${className || ''}`}
   {...otherProps}
 >
   <div class={`${firstColor} h-[50%] desktop:hidden`}></div>
@@ -41,7 +41,7 @@ const desktopImg = await getImage({
       alt={alt}
       width="1448"
       height="1474"
-      loading={lazy ? "lazy" : "eager"}
+      loading={lazy ? 'lazy' : 'eager'}
       class="absolute desktop:relative top-0 left-0 w-full m-auto right-0 desktop:m-0 desktop:w-auto"
     />
   </picture>

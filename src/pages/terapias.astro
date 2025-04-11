@@ -1,8 +1,8 @@
 ---
-import TherapyCard from "@components/therapyCard.astro";
-import Contact from "@sections/contact.astro";
-import { therapies } from "src/content/therapies";
-import Layout from "src/layouts/Layout.astro";
+import TherapyCard from '@components/therapyCard.astro';
+import Contact from '@sections/contact.astro';
+import { therapies } from 'src/content/therapies';
+import Layout from 'src/layouts/Layout.astro';
 ---
 
 <Layout>
@@ -21,7 +21,7 @@ import Layout from "src/layouts/Layout.astro";
     <div class="desktop:max-w-[1200px]">
       <ul class="gallery desktop:gap-y-[112px] gap-s">
         {
-          therapies.map((card) => (
+          therapies.map(card => (
             <li>
               <TherapyCard displayPrice={false} {...card} />
             </li>

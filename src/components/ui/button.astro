@@ -1,0 +1,26 @@
+<!-- ---
+import { cva } from "class-variance-authority";
+
+
+const buttonVariants = cva(
+    "bg-transparent border-2 hover:bg-neutral02 border-main06 py-m px-l w-full text-white rounded-rounded flex gap-s justify-center align-middle",
+)
+
+interface ButtonProps extends HTMLButtonElement
+
+const { ...props } = Astro.props as ButtonProps;
+---
+
+
+// ---
+// const { ...props } = Astro.props;
+// ---
+
+// <a
+//   {...props}
+//   class=""
+// >
+//   <span class="text-main06 text-body font-medium leading-action">
+//     <slot />
+//   </span>
+// </a> -->

@@ -1,8 +1,8 @@
 ---
-import Clock from "@icons/clock.astro";
-import BadgeSmall from "./badgeSmall.astro";
-import H3 from "./h3.astro";
-import List from "./list.astro";
+import Clock from '@icons/clock.astro';
+import BadgeSmall from './badgeSmall.astro';
+import H3 from './h3.astro';
+import List from './list.astro';
 
 interface SummaryTherapyCardProps {
   id: string;
@@ -35,7 +35,7 @@ const { id, title, price, time, details } =
       <div class="my-6 flex-grow">
         <List>
           {
-            details.map((detail) => (
+            details.map(detail => (
               <li>
                 <p>{detail}</p>
               </li>

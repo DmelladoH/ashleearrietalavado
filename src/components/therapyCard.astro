@@ -1,8 +1,8 @@
 ---
-import H2 from "@components/h2.astro";
-import List from "./list.astro";
-import TherapyInfo from "./therapyInfo.astro";
-import TimeDisplay from "./ui/timeDisplay.astro";
+import H2 from '@components/h2.astro';
+import List from './list.astro';
+import TherapyInfo from './therapyInfo.astro';
+import TimeDisplay from './ui/timeDisplay.astro';
 
 interface TherapyCardProps {
   title: string;
@@ -81,7 +81,7 @@ const {
       </summary>
       <List class="mt-6">
         {
-          details.map((detail) => (
+          details.map(detail => (
             <li>
               <p>{detail}</p>
             </li>
@@ -110,13 +110,13 @@ const {
   }
 
   summary::after {
-    content: "";
-    background: url("/chevron_down.svg") center no-repeat;
+    content: '';
+    background: url('/chevron_down.svg') center no-repeat;
     width: 24px;
     height: 24px;
   }
 
   details[open] summary::after {
-    background: url("/chevron_up.svg") center no-repeat;
+    background: url('/chevron_up.svg') center no-repeat;
   }
 </style>
