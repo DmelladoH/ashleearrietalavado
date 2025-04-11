@@ -2,19 +2,26 @@
 import Clock from "@icons/clock.astro";
 import Badge from "./badge.astro";
 
-const { title, price, disclaimer, time } = Astro.props;
+interface Props {
+  title: string;
+  price?: string;
+  disclaimer?: string;
+  timeInMinutes: number;
+}
+
+const { title, price, disclaimer, timeInMinutes } = Astro.props;
 ---
 
 <div class="grid gap-xs">
   <p class="text-info font-bold leading-info">{title}</p>
   <div class="flex gap-s align-middle items-center">
-    <Badge price={price} disclaimer={disclaimer} />
+    {price ? <Badge price={price} disclaimer={disclaimer} /> : null}
     <div class="flex gap-xxs">
       <div class="h-6 w-6">
         <Clock />
       </div>
       <p class="text-info font-light">
-        <span class="text-h4 font-medium text-main09">{time}</span> min
+        <span class="text-h4 font-medium text-main09">{timeInMinutes}</span> min
       </p>
     </div>
   </div>

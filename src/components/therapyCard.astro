@@ -42,15 +42,11 @@ const {
       <div class="grid gap-xs">
         <TherapyInfo
           title="Sesión presencial"
-          price={inPersonPrice}
-          disclaimer={priceDisclaimer}
-          time={inPersonTimeInMinutes}
+          timeInMinutes={inPersonTimeInMinutes}
         />
         <TherapyInfo
           title="Sesión online"
-          price={onlinePrice}
-          disclaimer={priceDisclaimer}
-          time={onlineTimeInMinutes}
+          timeInMinutes={onlineTimeInMinutes}
         />
         {
           priceDisclaimer && (
