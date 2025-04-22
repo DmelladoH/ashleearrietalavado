@@ -1,5 +1,5 @@
 ---
-import H3 from "./h3.astro";
+import Heading from './ui/heading.astro';
 
 const { title, text } = Astro.props;
 ---
@@ -10,9 +10,9 @@ const { title, text } = Astro.props;
       <slot />
     </div>
     <div>
-      <H3>
+      <Heading as="h3">
         {title}
-      </H3>
+      </Heading>
       <p class="leading-body mt-2 text-body font-normal">
         {text}
       </p>

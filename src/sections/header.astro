@@ -1,30 +1,30 @@
 ---
-import WhatsappContactButton from "@components/whatsappContactButton.astro";
-import Bars3 from "@icons/bars3.astro";
-import Cross from "@icons/cross.astro";
-import LogoWithTitle from "@icons/logoWithTitle.astro";
-import SimpleLogo from "@icons/simpleLogo.astro";
+import WhatsappContactButton from '@components/whatsappContactButton.astro';
+import Bars3 from '@icons/bars3.astro';
+import Cross from '@icons/cross.astro';
+import LogoWithTitle from '@icons/logoWithTitle.astro';
+import SimpleLogo from '@icons/simpleLogo.astro';
 
 const { pathname } = Astro.url;
 const normalizedPathName =
-  pathname.length > 1 && pathname.endsWith("/")
+  pathname.length > 1 && pathname.endsWith('/')
     ? pathname.slice(0, -1)
     : pathname;
 
 const links = [
   {
-    href: "/",
-    name: "Página principal",
+    href: '/',
+    name: 'Página principal',
   },
   {
-    href: "/terapias",
-    name: "Terapias",
+    href: '/terapias',
+    name: 'Terapias',
   },
   {
-    href: "/servicios-para-empresas",
-    name: "Servicios para empresas",
+    href: '/servicios-para-empresas',
+    name: 'Servicios para empresas',
   },
-].map((link) => ({
+].map(link => ({
   ...link,
   active: normalizedPathName === link.href,
 }));
@@ -57,9 +57,9 @@ const links = [
     <nav aria-label="Navegación principal">
       <ul>
         {
-          links.map((link) => (
+          links.map(link => (
             <li
-              class={`${link.active ? "text-action04 border-b-2 border-b-action04" : ""} border-b-2 border-white p-s`}
+              class={`${link.active ? 'text-action04 border-b-2 border-b-action04' : ''} border-b-2 border-white p-s`}
             >
               <a href={link.href} aria-label={`Ir a ${link.name}`}>
                 {link.name}
@@ -94,47 +94,47 @@ const links = [
 
 <script defer>
   function init() {
-    const primaryNav = document.getElementById("primary-nav");
-    const toggleMenuButton = document.getElementById("toggle-menu");
-    const shortIcon = document.getElementById("short-icon");
-    const longIcon = document.getElementById("long-icon");
+    const primaryNav = document.getElementById('primary-nav');
+    const toggleMenuButton = document.getElementById('toggle-menu');
+    const shortIcon = document.getElementById('short-icon');
+    const longIcon = document.getElementById('long-icon');
 
-    const barsIcon = document.querySelector(".barsIcon");
-    const crossIcon = document.querySelector(".crossIcon");
-    const header = document.getElementById("app-header");
+    const barsIcon = document.querySelector('.barsIcon');
+    const crossIcon = document.querySelector('.crossIcon');
+    const header = document.getElementById('app-header');
 
-    const body = document.querySelector("body");
+    const body = document.querySelector('body');
 
-    toggleMenuButton.addEventListener("click", () => {
-      const isVisible = primaryNav.getAttribute("data-visible") === "true";
+    toggleMenuButton.addEventListener('click', () => {
+      const isVisible = primaryNav.getAttribute('data-visible') === 'true';
 
       if (isVisible) {
-        primaryNav.setAttribute("data-visible", "false");
-        toggleMenuButton.setAttribute("aria-expanded", "false");
-        body.classList.remove("removeScroll");
-        longIcon.setAttribute("data-visible", "true");
-        shortIcon.setAttribute("data-visible", "false");
+        primaryNav.setAttribute('data-visible', 'false');
+        toggleMenuButton.setAttribute('aria-expanded', 'false');
+        body.classList.remove('removeScroll');
+        longIcon.setAttribute('data-visible', 'true');
+        shortIcon.setAttribute('data-visible', 'false');
 
-        barsIcon.setAttribute("data-visible", "true");
-        crossIcon.setAttribute("data-visible", "false");
-        header.classList.add("drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)]");
+        barsIcon.setAttribute('data-visible', 'true');
+        crossIcon.setAttribute('data-visible', 'false');
+        header.classList.add('drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)]');
       } else {
-        primaryNav.setAttribute("data-visible", "true");
-        toggleMenuButton.setAttribute("aria-expanded", "true");
-        body.classList.add("removeScroll");
-        longIcon.setAttribute("data-visible", "false");
-        shortIcon.setAttribute("data-visible", "true");
+        primaryNav.setAttribute('data-visible', 'true');
+        toggleMenuButton.setAttribute('aria-expanded', 'true');
+        body.classList.add('removeScroll');
+        longIcon.setAttribute('data-visible', 'false');
+        shortIcon.setAttribute('data-visible', 'true');
 
-        barsIcon.setAttribute("data-visible", "false");
-        crossIcon.setAttribute("data-visible", "true");
+        barsIcon.setAttribute('data-visible', 'false');
+        crossIcon.setAttribute('data-visible', 'true');
         header.classList.remove(
-          "drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)]",
+          'drop-shadow-[0_0px_24px_rgba(141,166,162,0.3)]'
         );
       }
     });
   }
 
-  document.addEventListener("astro:page-load", () => {
+  document.addEventListener('astro:page-load', () => {
     init();
   });
 </script>
@@ -181,18 +181,18 @@ const links = [
       display: flex;
       flex-direction: column;
     }
-    .primary-nav[data-visible="true"] {
+    .primary-nav[data-visible='true'] {
       transform: translateX(0%);
     }
 
-    .icon[data-visible="false"] {
+    .icon[data-visible='false'] {
       display: none;
     }
-    .primary-nav[data-visible="true"] {
+    .primary-nav[data-visible='true'] {
       transform: translateX(0%);
     }
 
-    .icon[data-visible="false"] {
+    .icon[data-visible='false'] {
       display: none;
     }
   }

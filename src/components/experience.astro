@@ -1,17 +1,17 @@
 ---
-import H4 from "@components/h4.astro";
-import { experienceImgLinks } from "@content/experience";
+import { experienceImgLinks } from '@content/experience';
+import Heading from './ui/heading.astro';
 ---
 
 <div class="px-l desktop:py-xxl py-xl gap-s grid justify-center">
-  <H4 class="text-center font-medium px-[1px] desktop:p-x-0"
-    >Mi experiencia está reconocida por…</H4
+  <Heading as="h4" class="text-center font-medium px-[1px] desktop:p-x-0"
+    >Mi experiencia está reconocida por…</Heading
   >
   <div class="w-full flex flex-col mt-8">
     <div class="grid w-full justify-center">
       <ul class="gallery gap-s desktop:gap-xl w-full">
         {
-          experienceImgLinks.map((image) => (
+          experienceImgLinks.map(image => (
             <li class="flex justify-center items-center w-[96px] h-[40px]">
               <img
                 src={image.link}

@@ -1,0 +1,41 @@
+---
+import { cn } from '@lib/utils';
+import type { Polymorphic } from 'astro/types';
+import { cva, type VariantProps } from 'class-variance-authority';
+
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4';
+
+const HeaderVariants = cva('font-bold', {
+  variants: {
+    as: {
+      h1: 'text-h2 desktop:text-h1 leading-h2 desktop:leading-h1',
+      h2: 'text-h2 leading-h2',
+      h3: 'text-h3 leading-h3',
+      h4: 'text-h4 leading-h4',
+    },
+  },
+  defaultVariants: {
+    as: 'h1',
+  },
+});
+
+type HeadingProps<Tag extends HeadingTag> = Polymorphic<{
+  as: Tag;
+  variant: Tag;
+}> &
+  VariantProps<typeof HeaderVariants>;
+
+const {
+  as: Tag = 'h1',
+  variant,
+  class: className,
+  ...props
+} = Astro.props as HeadingProps<HeadingTag>;
+---
+
+<Tag
+  class={cn(HeaderVariants({ as: variant ? variant : Tag, className }))}
+  {...props}
+>
+  <slot />
+</Tag>

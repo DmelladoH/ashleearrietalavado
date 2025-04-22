@@ -1,9 +1,9 @@
 ---
-import H1 from "@components/h1.astro";
-import ResponsiveImage from "@components/responsiveImage.astro";
-import WhatsappContactButton from "@components/whatsappContactButton.astro";
-import hero from "@pictures/hero.png";
-import heroMobil from "@pictures/hero-mobile.png";
+import ResponsiveImage from '@components/responsiveImage.astro';
+import WhatsappContactButton from '@components/whatsappContactButton.astro';
+import hero from '@pictures/hero.png';
+import heroMobil from '@pictures/hero-mobile.png';
+import Heading from '@components/ui/heading.astro';
 ---
 
 <section class="bg-accent03 desktop:flex justify-center">
@@ -11,12 +11,22 @@ import heroMobil from "@pictures/hero-mobile.png";
     class="grid desktop:grid-flow-col desktop:gap-xl desktop:py-xxxl desktop:max-w-[1182px]"
   >
     <div class="grid gap-xs desktop:gap-s px-l max-w-[752px] pb-l pt-xl">
-      <H1>Conoce el Centro de Psicología Ashlee Arrieta Lavado</H1>
-      <h2
-        class="text-h3 desktop:text-h2 font-bold leading-h3 desktop:leading-h2"
+      <Heading as="h1"
+        >Conoce el Centro de Psicología Ashlee Arrieta Lavado</Heading
       >
-        Acompañándote en tu camino hacia el bienestar emocional.
-      </h2>
+      <Heading
+        as="h3"
+        class="text-h4 desktop:text-h3 font-bold leading-h4 desktop:leading-h3"
+      >
+        ¿Estás pasando por un momento difícil en tu vida?
+      </Heading>
+      <Heading
+        as="h3"
+        class="text-h4 desktop:text-h3 font-bold leading-h4 desktop:leading-h3"
+      >
+        Si no sabes ponerle nombre a lo que te ocurre, podemos buscar una
+        solución en conjunto.
+      </Heading>
       <p class="text-body font-normal leading-body">
         Un espacio seguro y acogedor donde encontrarás la empatía y comprensión
         que necesitas durante tú proceso de crecimiento vital.

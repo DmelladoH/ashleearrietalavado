@@ -1,10 +1,12 @@
 ---
-import H3 from "@components/h3.astro";
-import SecondaryButton from "@components/secondaryButton.astro";
+import Button from '@components/ui/button.astro';
+import Heading from '@components/ui/heading.astro';
 ---
 
 <section class="py-xl px-l desktop:w-[50%]">
-  <H3 class="text-center desktop:text-left">¿Eres parte de un centro?</H3>
+  <Heading as="h3" class="text-center desktop:text-left"
+    >¿Eres parte de un centro?</Heading
+  >
   <p class="leading-body mt-4 text-center desktop:text-left">
     Si eres parte de un centro educativo, de integración social, una empresa o
     asociación, puedo acompañaros en vuestro viaje grupal y aprendizaje hacia
@@ -12,8 +14,8 @@ import SecondaryButton from "@components/secondaryButton.astro";
   </p>
   <div class="flex justify-center desktop:justify-start mt-8">
     <div class="max-w-[160px]">
-      <SecondaryButton href="/servicios-para-empresas"
-        >Saber más</SecondaryButton
+      <Button variant="secondary" href="/servicios-para-empresas"
+        >Saber más</Button
       >
     </div>
   </div>

@@ -9,7 +9,8 @@
       "@pictures/*": ["src/assets/pictures/*"],
       "@sections/*": ["src/sections/*"],
       "@components/*": ["src/components/*"],
-      "@content/*": ["src/content/*"]
+      "@content/*": ["src/content/*"],
+      "@lib/*": ["src/lib/*"]
     }
   }
 }

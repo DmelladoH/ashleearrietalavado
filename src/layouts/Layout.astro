@@ -1,14 +1,14 @@
 ---
-import Footer from "@sections/footer.astro";
-import Header from "@sections/header.astro";
-import { siteData } from "@content/siteData";
-import Seo from "@components/seo.astro";
-import { ClientRouter } from "astro:transitions";
+import Footer from '@sections/footer.astro';
+import Header from '@sections/header.astro';
+import { siteData } from '@content/siteData';
+import Seo from '@components/seo.astro';
+import { ClientRouter } from 'astro:transitions';
 
 const { title, description, canonical, image } = siteData;
 
-import { fade } from "astro:transitions";
-import GoogleAnalytics from "@components/googleAnalytics.astro";
+import { fade } from 'astro:transitions';
+import GoogleAnalytics from '@components/googleAnalytics.astro';
 ---
 
 <!doctype html>
@@ -26,10 +26,7 @@ import GoogleAnalytics from "@components/googleAnalytics.astro";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
-  <body
-    class="bg-white text-main09"
-    transition:animate={fade({ duration: "0.4s" })}
-  >
+  <body class="bg-white text-main09">
     <Header />
     <main class="pt-xxxl">
       <slot />

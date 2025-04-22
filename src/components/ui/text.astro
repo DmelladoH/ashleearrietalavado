@@ -1,0 +1,15 @@
+---
+import { cn } from '@lib/utils';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'p'> {}
+
+const { class: className, ...props } = Astro.params as Props;
+---
+
+<p
+  class={cn('text-pretty text-body leading-body font-normal', className)}
+  {...props}
+>
+  <slot />
+</p>

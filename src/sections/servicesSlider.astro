@@ -1,15 +1,16 @@
 ---
-import H4 from "@components/h4.astro";
-import SummaryTherapyCard from "@components/summaryTherapyCard.astro";
-import ChevronRight from "@icons/chevronRight.astro";
-import { therapies } from "src/content/therapies";
+import Heading from '@components/ui/heading.astro';
+import SummaryTherapyCard from '@components/summaryTherapyCard.astro';
+import ChevronRight from '@icons/chevronRight.astro';
+import { therapies } from 'src/content/therapies';
 ---
 
 <section class="py-xl desktop:flex desktop:justify-center">
   <div class="wrapper">
-    <H4 class="font-medium px-[40px]"
-      >Escoje la terapia que mejor se adapte a ti:</H4
-    >
+    <Heading as="h4" class="font-medium px-[40px]"
+      >Escoje la terapia que mejor se adapte a ti:
+    </Heading>
+
     <div class="flex mt-8">
       <div class="flex items-center p-s">
         <button
@@ -22,7 +23,7 @@ import { therapies } from "src/content/therapies";
       <div class="swiper">
         <div class="swiper-wrapper">
           {
-            therapies.map((card) => (
+            therapies.map(card => (
               <div class="swiper-slide">
                 <SummaryTherapyCard
                   id={card.title}
@@ -56,7 +57,7 @@ import { therapies } from "src/content/therapies";
 
   .swiper-button-next-unique::after,
   .swiper-button-next-unique::after {
-    content: "";
+    content: '';
   }
 
   .swiper-pagination-bullet {
@@ -80,16 +81,16 @@ import { therapies } from "src/content/therapies";
 ></script>
 
 <script type="module" transition:persist>
-  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
-  document.addEventListener("astro:page-load", () => {
-    new Swiper(".swiper", {
+  document.addEventListener('astro:page-load', () => {
+    new Swiper('.swiper', {
       slidesPerView: 1,
       spaceBetween: 16,
       loop: true,
       navigation: {
-        prevEl: ".swiper-button-prev-unique",
-        nextEl: ".swiper-button-next-unique",
+        prevEl: '.swiper-button-prev-unique',
+        nextEl: '.swiper-button-next-unique',
       },
       breakpoints: {
         20: {
