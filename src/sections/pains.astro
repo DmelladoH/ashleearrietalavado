@@ -1,8 +1,8 @@
 ---
 import Experience from '@components/experience.astro';
-import H3 from '@components/h3.astro';
 import List from '@components/list.astro';
 import ResponsiveImage from '@components/responsiveImage.astro';
+import Heading from '@components/ui/heading.astro';
 import kvFull from '@pictures/kv-full.png';
 import kvMobile from '@pictures/kv-mobile.png';
 
@@ -28,7 +28,7 @@ const pains = [
     class="order-3 desktop:order-2 px-l desktop:pr-[80px] py-xxl desktop:grid desktop:justify-end"
   >
     <div>
-      <H3>Te puedo ayudar con...</H3>
+      <Heading as="h3">Te puedo ayudar con...</Heading>
       <List class="mt-6">
         {
           pains.map(pain => (

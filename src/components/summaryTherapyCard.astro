@@ -1,8 +1,8 @@
 ---
 import Clock from '@icons/clock.astro';
 import BadgeSmall from './badgeSmall.astro';
-import H3 from './h3.astro';
 import List from './list.astro';
+import Heading from './ui/heading.astro';
 
 interface SummaryTherapyCardProps {
   id: string;
@@ -20,7 +20,7 @@ const { id, title, price, time, details } =
     class="hover:bg-[#d1e3e0] py-m px-l border-2 rounded-default h-full bg-neutral03 border-main06"
   >
     <div class="flex flex-col h-full">
-      <H3>{title}</H3>
+      <Heading as="h3">{title}</Heading>
       <div class="flex gap-s align-middle items-center mt-2">
         {price ? <BadgeSmall price={price} /> : null}
         <div class="flex gap-xxs">

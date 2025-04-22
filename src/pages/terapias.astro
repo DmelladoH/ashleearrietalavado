@@ -1,5 +1,6 @@
 ---
 import TherapyCard from '@components/therapyCard.astro';
+import Heading from '@components/ui/heading.astro';
 import Contact from '@sections/contact.astro';
 import { therapies } from 'src/content/therapies';
 import Layout from 'src/layouts/Layout.astro';
@@ -7,9 +8,9 @@ import Layout from 'src/layouts/Layout.astro';
 
 <Layout>
   <section class="bg-neutral02 py-xxxl px-l grid gap-s">
-    <h1 class="text-h2 font-bold leading-h2 text-center">
+    <Heading as="h1" class="text-h2 font-bold leading-h2 text-center">
       Te acompaño en cada paso, sea cual sea tu situación
-    </h1>
+    </Heading>
     <p class="leading-body text-center">
       Descubre las terapias disponibles y encuentra la que mejor se adapte a tus
       necesidades.
