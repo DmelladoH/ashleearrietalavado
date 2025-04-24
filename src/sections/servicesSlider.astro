@@ -2,7 +2,8 @@
 import Heading from '@components/ui/heading.astro';
 import SummaryTherapyCard from '@components/summaryTherapyCard.astro';
 import { therapies } from '@content/therapies';
-import Slider from '@components/slider.astro';
+import Slider from '@components/slider/slider.astro';
+import SliderItem from '@components/slider/sliderItem.astro';
 ---
 
 <section class="py-xl desktop:flex desktop:justify-center">
@@ -10,17 +11,17 @@ import Slider from '@components/slider.astro';
     <Heading as="h4" class="font-medium px-[40px]"
       >Escoje la terapia que mejor se adapte a ti:
     </Heading>
-    <Slider>
+    <Slider client:load>
       {
         therapies.map(card => (
-          <div class="swiper-slide">
+          <SliderItem>
             <SummaryTherapyCard
               id={card.title}
               title={`Terapia ${card.title}`}
               time={card.inPersonTimeInMinutes}
               details={card.summaryDetails}
             />
-          </div>
+          </SliderItem>
         ))
       }
     </Slider>

@@ -13,9 +13,9 @@ import ChevronRight from '@icons/chevronRight.astro';
     </button>
   </div>
   <div class="swiper">
-    <div class="swiper-wrapper">
-      <slot />
-    </div>
+    <ul class="swiper-wrapper">
+      <slot class="swiper-slide" />
+    </ul>
   </div>
   <div class="flex items-center p-s">
     <button
@@ -33,10 +33,11 @@ import ChevronRight from '@icons/chevronRight.astro';
   .swiper-button-prev-unique {
     width: 24px;
     height: 24px;
+    display: flex !important;
   }
 
   .swiper-button-next-unique::after,
-  .swiper-button-next-unique::after {
+  .swiper-button-prev-unique::after {
     content: '';
   }
 
@@ -53,18 +54,14 @@ import ChevronRight from '@icons/chevronRight.astro';
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
 ></script>
-
 <script type="module" transition:persist>
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
   let swipeInstance;
 
-  document.addEventListener('astro:page-load', () => {
-    if (swipeInstance) {
-      swipeInstance.destroy(true, true);
-    }
-
+  const initSwiper = () => {
+    if (swipeInstance) swipeInstance.destroy(true, true);
     swipeInstance = new Swiper('.swiper', {
-      slidesPerView: 1,
+      slidesPerView: 3,
       spaceBetween: 16,
       loop: true,
       navigation: {
@@ -72,19 +69,36 @@ import ChevronRight from '@icons/chevronRight.astro';
         nextEl: '.swiper-button-next-unique',
       },
       breakpoints: {
-        20: {
-          slidesPerView: 1,
-          spaceBetween: 16,
-        },
-        600: {
-          slidesPerView: 2,
-          spaceBetween: 16,
-        },
-        800: {
-          slidesPerView: 3,
-          spaceBetween: 16,
-        },
+        20: { slidesPerView: 1, spaceBetween: 16 },
+        600: { slidesPerView: 2, spaceBetween: 16 },
+        800: { slidesPerView: 3, spaceBetween: 16 },
       },
     });
-  });
+  };
+
+  const waitForSlides = () => {
+    const wrapper = document.querySelector('.swiper-wrapper');
+    if (!wrapper) return;
+
+    const hasSlides = () =>
+      wrapper.querySelectorAll('.swiper-slide').length > 0;
+
+    const tryInit = () => {
+      if (hasSlides()) {
+        initSwiper();
+        return true;
+      }
+      return false;
+    };
+
+    if (tryInit()) return;
+
+    const observer = new MutationObserver(() => {
+      if (tryInit()) observer.disconnect();
+    });
+
+    observer.observe(wrapper, { childList: true, subtree: true });
+  };
+
+  document.addEventListener('astro:page-load', waitForSlides);
 </script>
