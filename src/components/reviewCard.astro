@@ -1,0 +1,76 @@
+---
+import type { Review } from 'src/types';
+import ScoreStar from './ui/scoreStar.astro';
+
+interface Props extends Review {
+  id: string;
+}
+
+const { id, reviewer, score, review, ...args } = Astro.props as Props;
+---
+
+<article class="border-2 p-l rounded-default border-[rgba(17,17,17,0.1)]">
+  <header class="flex gap-s align-middle">
+    <img src={reviewer.img} width="32px" height="32px" />
+    <span>{reviewer.fullName}</span>
+  </header>
+  <div class="mt-2 mb-2">
+    <ScoreStar count={score} />
+  </div>
+  <div id={`reviewCard-container-${id}`}>
+    <p id={`reviewCard-text-container-${id}`} class="text-clip review-text">
+      {review}
+    </p>
+    <button class="collapsed" id={`collapseBtn-${id}`} aria-expanded="false"
+      >Leer más</button
+    >
+  </div>
+</article>
+
+<style>
+  .text-clip {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .review-text {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<script define:vars={{ id }}>
+  const container = document.getElementById(`reviewCard-container-${id}`);
+  const text = document.getElementById(`reviewCard-text-container-${id}`);
+  const btn = document.getElementById(`collapseBtn-${id}`);
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        text.classList.add('text-clip');
+        btn.setAttribute('aria-expanded', false);
+      } else {
+        text.classList.remove('text-clip');
+        btn.setAttribute('aria-expanded', true);
+      }
+    });
+  }
+
+  document.addEventListener('swiper:ready', () => {
+    if (text) {
+      const isCollapsed = text.scrollHeight > container.offsetHeight;
+      if (isCollapsed) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    }
+  });
+</script>

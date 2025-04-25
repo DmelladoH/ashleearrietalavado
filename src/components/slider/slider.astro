@@ -86,6 +86,7 @@ import ChevronRight from '@icons/chevronRight.astro';
     const tryInit = () => {
       if (hasSlides()) {
         initSwiper();
+        document.dispatchEvent(new CustomEvent(`swiper:ready`));
         return true;
       }
       return false;
