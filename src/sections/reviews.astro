@@ -1,0 +1,34 @@
+---
+import ReviewCard from '@components/reviewCard.astro';
+import SliderItem from '@components/slider/sliderItem.astro';
+import Slider from '@components/slider/slider.astro';
+import { reviews } from '@content/reviews';
+---
+
+<section class="py-xl desktop:flex desktop:justify-center">
+  <div class="max-w-[1200px] mx-0 my-auto w-full">
+    <Slider client:load>
+      {
+        reviews.map(review => (
+          <SliderItem>
+            <ReviewCard
+              client:load
+              id={review.reviewer.fullName.replaceAll(' ', '-').toLowerCase()}
+              {...review}
+            />
+          </SliderItem>
+        ))
+      }
+    </Slider>
+    <div class="mt-4 flex justify-end">
+      <a
+        href="https://www.google.com/search?sca_esv=b5608bee10f15177&tbm=lcl&sxsrf=AHTn8zooYKvw1HS6U1YQr2mXg_jQmCBMSQ:1745669232465&q=Ashlee+Arrieta+Lavado+Psicolog%C3%ADa+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIyNze3MDMyMzQ0tjS3NLQ0NjbfwMj4ilHTsTgjJzVVwbGoKDO1JFHBJ7EsMSVfIaA4Mzk_Jz_98NpEhaDUsszU8uJFrMSrBQAIAtaXcQAAAA&rldimm=777862611397919337&hl=en-ES&sa=X&ved=2ahUKEwi6i_jT1PWMAxWEVfEDHYiUCE4Q9fQKegQIShAF&biw=849&bih=823&dpr=2#lkt=LocalPoiReviews"
+        aria-label="ver más reseñas en Google"
+        class="underline underline-offset-4 text-action font-medium hover:opacity-70"
+        target="_blank"
+      >
+        Ver más reseñas en Google
+      </a>
+    </div>
+  </div>
+</section>
