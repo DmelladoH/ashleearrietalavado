@@ -7,12 +7,11 @@ import { reviews } from '@content/reviews';
 
 <section class="py-xl desktop:flex desktop:justify-center">
   <div class="max-w-[1200px] mx-0 my-auto w-full">
-    <Slider client:load>
+    <Slider>
       {
         reviews.map(review => (
           <SliderItem>
             <ReviewCard
-              client:load
               id={review.reviewer.fullName.replaceAll(' ', '-').toLowerCase()}
               {...review}
             />
