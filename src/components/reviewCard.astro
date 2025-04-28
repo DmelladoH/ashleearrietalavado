@@ -15,7 +15,13 @@ const { id, reviewer, score, review, ...args } = Astro.props as Props;
   <header class="flex gap-s items-center">
     {
       reviewer.img ? (
-        <img src={reviewer.img} width="32px" height="32px" />
+        <img
+          src={reviewer.img}
+          loading="lazy"
+          alt=""
+          width="32px"
+          height="32px"
+        />
       ) : null
     }
     <span>{reviewer.fullName}</span>
