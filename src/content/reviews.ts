@@ -3,7 +3,7 @@ import type { Review } from 'src/types';
 export const reviews: Review[] = [
   {
     reviewer: {
-      img: 'src/assets/pictures/reviews/vanesa.png',
+      img: '/reviews/vanesa.png',
       fullName: 'Vanesa Carpintero Camarera',
     },
     score: 5,
@@ -15,7 +15,7 @@ Ashlee, sabes que siempre guardo tu número a buen recaudo y que no tengo palabr
   },
   {
     reviewer: {
-      img: 'https://lh3.googleusercontent.com/a-/ALV-UjUl0RUjuhjeZKjtV1fQHAPR5uGaWzj41r27jhJ20i73NGMA1UXFVg=s64-c-rp-mo-ba3-br100',
+      img: '/reviews/kevin.png',
       fullName: 'Kevin Hernández',
     },
     score: 5,
@@ -25,7 +25,7 @@ Ashlee, sabes que siempre guardo tu número a buen recaudo y que no tengo palabr
   },
   {
     reviewer: {
-      img: 'https://lh3.googleusercontent.com/a-/ALV-UjVrWZkE_MzW7hibxXpjiyd-HcUHZ1N3eLtrSH23EC4PpWDnx7hR=s64-c-rp-mo-ba2-br100',
+      img: '/reviews/leire.png',
       fullName: 'Leire Sánchez Vilariño',
     },
     score: 5,
@@ -36,7 +36,7 @@ Ashlee, sabes que siempre guardo tu número a buen recaudo y que no tengo palabr
 
   {
     reviewer: {
-      img: 'https://lh3.googleusercontent.com/a-/ALV-UjW83sU92L-iJzV_B_APmsACaw-TQmGDIrTi64DUowI7OSy_p10=s64-c-rp-mo-br100',
+      img: '/reviews/alazne.png',
       fullName: 'alazne merino peña',
     },
     score: 5,
@@ -47,7 +47,7 @@ Ashlee, sabes que siempre guardo tu número a buen recaudo y que no tengo palabr
 
   {
     reviewer: {
-      img: 'https://lh3.googleusercontent.com/a/ACg8ocJ-Wm6JbN65W8cPOQSfYDn76NxFwn-yyYNUu0nu3gaHFNppBQ=s64-c-rp-mo-br100',
+      img: '/reviews/raul.png',
       fullName: 'Raul Rodriguez',
     },
     score: 5,
@@ -58,7 +58,7 @@ Ashlee, sabes que siempre guardo tu número a buen recaudo y que no tengo palabr
 
   {
     reviewer: {
-      img: 'https://lh3.googleusercontent.com/a/ACg8ocKs8wJ9UU3lAG3IQZ8AR3yWTtmV3QMsXaNsu1K-ZZqKRb9byw=s64-c-rp-mo-br100',
+      img: '/reviews/leticia.png',
       fullName: 'leticia caballero',
     },
     score: 5,
@@ -69,7 +69,7 @@ Ashlee, sabes que siempre guardo tu número a buen recaudo y que no tengo palabr
 
   {
     reviewer: {
-      img: 'https://lh3.googleusercontent.com/a/ACg8ocK0sqRsftTsig_OclGduYRqLjc7-3PPuz1d_DiQUF9rnh1lbQ=s64-c-rp-mo-br100',
+      img: '/reviews/itxaso.png',
       fullName: 'Itxaso Fernández',
     },
     score: 5,
@@ -100,7 +100,7 @@ Ashlee, sabes que siempre guardo tu número a buen recaudo y que no tengo palabr
   },
   {
     reviewer: {
-      img: 'https://lh3.googleusercontent.com/a/ACg8ocLSgIPMWWb2hpXqrdPj2pjm0CHgeSAWYEuTdFYF1AFUvZIH=s64-c-rp-mo-br100',
+      img: '/reviews/jess.png',
       fullName: 'Jess',
     },
     score: 5,

@@ -3,10 +3,14 @@ import ReviewCard from '@components/reviewCard.astro';
 import SliderItem from '@components/slider/sliderItem.astro';
 import Slider from '@components/slider/slider.astro';
 import { reviews } from '@content/reviews';
+import Heading from '@components/ui/heading.astro';
 ---
 
 <section class="py-xl desktop:flex desktop:justify-center">
   <div class="max-w-[1200px] mx-0 my-auto w-full">
+    <Heading as="h4" class="font-medium px-[40px]"
+      >Lo que opinan los pacientes:
+    </Heading>
     <Slider>
       {
         reviews.map(review => (
