@@ -140,27 +140,6 @@ export const therapies = [
     ],
   },
   {
-    title: 'de familia',
-    onlinePrice: 80,
-    onlineTimeInMinutes: 60,
-    inPersonPrice: 90,
-    inPersonTimeInMinutes: 60,
-    description:
-      'Las dinámicas familiares pueden ser complejas y tienen un gran impacto en nuestro bienestar. Trabajaremos la comunicación entre todos los miembros, creando un ambiente saludable.',
-    details: [
-      'Divorcio de los padres.',
-      'Duelo por la muerte de un familiar.',
-      'Conflictos entre progenitores e hijos/as.',
-      'Problemas de comunicación.',
-      'Problemas de comportamiento en los menores.',
-    ],
-    summaryDetails: [
-      'Problemas de comunicación.',
-      'Divorcio de los padres.',
-      'Conflictos entre progenitores e hijos/as.',
-    ],
-  },
-  {
     title: 'grupal',
     onlinePrice: 30,
     onlineTimeInMinutes: 60,
