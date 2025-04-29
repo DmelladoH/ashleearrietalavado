@@ -1,4 +1,6 @@
-export const therapies = [
+import type { Service } from 'src/types';
+
+export const therapies: Service[] = [
   {
     title: 'para adultos',
     onlinePrice: 60,

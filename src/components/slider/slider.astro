@@ -1,0 +1,120 @@
+---
+import ChevronRight from '@icons/chevronRight.astro';
+---
+
+<div class="flex mt-8">
+  <div class="flex items-center p-s">
+    <button
+      type="button"
+      class="swiper-button-prev-unique"
+      aria-label="mover carrusel a la izquierda"
+    >
+      <ChevronRight class="rotate-180" />
+    </button>
+  </div>
+  <div class="swiper">
+    <ul class="swiper-wrapper">
+      <slot class="swiper-slide" />
+    </ul>
+  </div>
+  <div class="flex items-center p-s">
+    <button
+      type="button"
+      class="swiper-button-next-unique"
+      aria-label="mover carrusel a la derecha"
+    >
+      <ChevronRight />
+    </button>
+  </div>
+</div>
+
+<style>
+  .swiper-button-next-unique,
+  .swiper-button-prev-unique {
+    width: 34px;
+    height: 34px;
+    display: flex !important;
+  }
+
+  .swiper-button-next-unique:hover,
+  .swiper-button-prev-unique:hover {
+    outline: 1px solid rgba(206, 221, 221, 0.2);
+    border-radius: 50%;
+    background-color: rgba(206, 221, 221, 0.2);
+  }
+  .swiper-button-next-unique::after,
+  .swiper-button-prev-unique::after {
+    content: '';
+  }
+
+  .swiper-pagination-bullet {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (max-width: 600px) {
+    .swiper-button-next-unique,
+    .swiper-button-prev-unique {
+      width: 24px;
+      height: 24px;
+      display: flex !important;
+    }
+  }
+</style>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+></script>
+<script type="module" transition:persist>
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+  let swipeInstance;
+
+  const initSwiper = () => {
+    if (swipeInstance) swipeInstance.destroy(true, true);
+    swipeInstance = new Swiper('.swiper', {
+      slidesPerView: 3,
+      spaceBetween: 16,
+      loop: true,
+      navigation: {
+        prevEl: '.swiper-button-prev-unique',
+        nextEl: '.swiper-button-next-unique',
+      },
+      breakpoints: {
+        20: { slidesPerView: 1, spaceBetween: 16 },
+        600: { slidesPerView: 2, spaceBetween: 16 },
+        800: { slidesPerView: 3, spaceBetween: 16 },
+      },
+    });
+  };
+
+  const waitForSlides = () => {
+    const wrapper = document.querySelector('.swiper-wrapper');
+    if (!wrapper) return;
+
+    const hasSlides = () =>
+      wrapper.querySelectorAll('.swiper-slide').length > 0;
+
+    const tryInit = () => {
+      if (hasSlides()) {
+        initSwiper();
+        document.dispatchEvent(new CustomEvent(`swiper:ready`));
+        return true;
+      }
+      return false;
+    };
+
+    if (tryInit()) return;
+
+    const observer = new MutationObserver(() => {
+      if (tryInit()) observer.disconnect();
+    });
+
+    observer.observe(wrapper, { childList: true, subtree: true });
+  };
+
+  document.addEventListener('astro:page-load', waitForSlides);
+</script>

@@ -1,0 +1,88 @@
+---
+import type { Review } from 'src/types';
+import ScoreStar from './ui/scoreStar.astro';
+
+interface Props extends Review {
+  id: string;
+}
+
+const { id, reviewer, score, review, ...args } = Astro.props as Props;
+---
+
+<article
+  class="border-2 p-l rounded-default border-[rgba(17,17,17,0.1)] h-full"
+>
+  <header class="flex gap-s items-center">
+    {
+      reviewer.img ? (
+        <img
+          src={reviewer.img}
+          loading="lazy"
+          alt=""
+          width="32px"
+          height="32px"
+        />
+      ) : null
+    }
+    <span>{reviewer.fullName}</span>
+  </header>
+  <div class="mt-2 mb-2">
+    <ScoreStar count={score} />
+  </div>
+  <div id={`reviewCard-container-${id}`}>
+    <p id={`reviewCard-text-container-${id}`} class="text-clip review-text">
+      {review}
+    </p>
+    <button
+      class="text-action font-medium underline text-main07 underline-offset-4 mt-2"
+      id={`collapseBtn-${id}`}
+      aria-expanded="false">Leer más</button
+    >
+  </div>
+</article>
+
+<style>
+  .text-clip {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .review-text {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<script define:vars={{ id }}>
+  const container = document.getElementById(`reviewCard-container-${id}`);
+  const text = document.getElementById(`reviewCard-text-container-${id}`);
+  const btn = document.getElementById(`collapseBtn-${id}`);
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      if (!isExpanded) {
+        text.classList.remove('text-clip');
+        btn.setAttribute('aria-expanded', true);
+        btn.style.display = 'none';
+      }
+    });
+  }
+
+  document.addEventListener('swiper:ready', () => {
+    if (text) {
+      const isCollapsed = text.scrollHeight > container.offsetHeight;
+      if (isCollapsed) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    }
+  });
+</script>

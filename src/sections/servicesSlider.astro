@@ -1,111 +1,29 @@
 ---
 import Heading from '@components/ui/heading.astro';
 import SummaryTherapyCard from '@components/summaryTherapyCard.astro';
-import ChevronRight from '@icons/chevronRight.astro';
-import { therapies } from 'src/content/therapies';
+import { therapies } from '@content/therapies';
+import Slider from '@components/slider/slider.astro';
+import SliderItem from '@components/slider/sliderItem.astro';
 ---
 
 <section class="py-xl desktop:flex desktop:justify-center">
-  <div class="wrapper">
+  <div class="max-w-[1200px] mx-0 my-auto w-full">
     <Heading as="h4" class="font-medium px-[40px]"
       >Escoje la terapia que mejor se adapte a ti:
     </Heading>
-
-    <div class="flex mt-8">
-      <div class="flex items-center p-s">
-        <button
-          class="swiper-button-prev-unique"
-          aria-label="mover carrusel a la izquierda"
-        >
-          <ChevronRight class="rotate-180" />
-        </button>
-      </div>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          {
-            therapies.map(card => (
-              <div class="swiper-slide">
-                <SummaryTherapyCard
-                  id={card.title}
-                  title={`Terapia ${card.title}`}
-                  time={card.inPersonTimeInMinutes}
-                  details={card.summaryDetails}
-                />
-              </div>
-            ))
-          }
-        </div>
-      </div>
-      <div class="flex items-center p-s">
-        <button
-          class="swiper-button-next-unique"
-          aria-label="mover carrusel a la derecha"
-        >
-          <ChevronRight />
-        </button>
-      </div>
-    </div>
+    <Slider>
+      {
+        therapies.map(card => (
+          <SliderItem>
+            <SummaryTherapyCard
+              id={card.title}
+              title={`Terapia ${card.title}`}
+              time={card.inPersonTimeInMinutes}
+              details={card.summaryDetails}
+            />
+          </SliderItem>
+        ))
+      }
+    </Slider>
   </div>
 </section>
-
-<style>
-  .swiper-button-next-unique,
-  .swiper-button-prev-unique {
-    width: 24px;
-    height: 24px;
-  }
-
-  .swiper-button-next-unique::after,
-  .swiper-button-next-unique::after {
-    content: '';
-  }
-
-  .swiper-pagination-bullet {
-    width: 40px;
-    height: 40px;
-  }
-
-  .wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-  }
-</style>
-
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-></script>
-
-<script type="module" transition:persist>
-  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
-
-  document.addEventListener('astro:page-load', () => {
-    new Swiper('.swiper', {
-      slidesPerView: 1,
-      spaceBetween: 16,
-      loop: true,
-      navigation: {
-        prevEl: '.swiper-button-prev-unique',
-        nextEl: '.swiper-button-next-unique',
-      },
-      breakpoints: {
-        20: {
-          slidesPerView: 1,
-          spaceBetween: 16,
-        },
-        600: {
-          slidesPerView: 2,
-          spaceBetween: 16,
-        },
-        800: {
-          slidesPerView: 3,
-          spaceBetween: 16,
-        },
-      },
-    });
-  });
-</script>
