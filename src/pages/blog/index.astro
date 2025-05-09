@@ -40,7 +40,7 @@ const posts = await getCollection('blog');
                         {post.data.title}
                       </Heading>
                       <time 
-                        datetime={post.data.date.toISOString()}
+                        datetime={post.data.date?.toISOString()}
                         class="text-neutral07 block mt-2"
                       >
                         {new Date(post.data.date).toLocaleDateString('es-ES', {
