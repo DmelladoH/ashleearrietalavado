@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Heading from '@components/ui/heading.astro';
+import Button from '@components/ui/button.astro';
+---
+
+<Layout>
+  <div class="min-h-[70vh] flex items-center justify-center px-l">
+    <div class="text-center">
+      <Heading as="h1" variant="h2" class="mb-4">
+        Página no encontrada
+      </Heading>
+      <p class="text-neutral07 mb-8">
+        Lo sentimos, la página que buscas no existe o ha sido movida.
+      </p>
+      <div class="max-w-[200px] mx-auto">
+        <Button href="/" variant="primary">
+          Volver al inicio
+        </Button>
+      </div>
+    </div>
+  </div>
+</Layout>
