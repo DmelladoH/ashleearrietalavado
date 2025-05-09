@@ -28,6 +28,7 @@ const posts = await getCollection('blog');
     >
       {
         posts.length > 0 ? (
+<<<<<<< HEAD
           <div class="desktop:max-w-[1200px] w-full">
             <Gallery>
               {posts.map((post: any) => (
@@ -43,6 +44,51 @@ const posts = await getCollection('blog');
                 </li>
               ))}
             </Gallery>
+=======
+          <ul class="grid gap-s desktop:grid-cols-3">
+            {posts.map(post => (
+              <li>
+                <a 
+                  href={`/blog/${post.slug}`}
+                  class="block hover:transform hover:scale-105 transition-transform duration-200"
+                >
+                  <article class="border-2 border-main06 rounded-default overflow-hidden h-full">
+                    {post.data.thumbnail && (
+                      <img 
+                        src={post.data.thumbnail}
+                        alt=""
+                        class="w-full h-48 object-cover"
+                      />
+                    )}
+                    <div class="p-l">
+                      <Heading as="h2" variant="h3">
+                        {post.data.title}
+                      </Heading>
+                      <time 
+                        datetime={post.data.date?.toISOString()}
+                        class="text-neutral07 block mt-2"
+                      >
+                        {new Date(post.data.date).toLocaleDateString('es-ES', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </time>
+                    </div>
+                  </article>
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div class="text-center py-xxl">
+            <Heading as="h2" variant="h3" class="mb-4">
+              No hay artículos disponibles
+            </Heading>
+            <p class="text-neutral07">
+              Pronto publicaremos nuevo contenido. ¡Vuelve más tarde!
+            </p>
+>>>>>>> 1e142ae (Create blog section with gallery, empty state and 404)
           </div>
         ) : (
           <EmptyState />
