@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Heading from '@components/ui/heading.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout>
+  <article class="max-w-[800px] mx-auto px-l py-xxxl">
+    <header class="mb-xl">
+      {
+        post.data.thumbnail && (
+          <img
+            src={post.data.thumbnail}
+            alt=""
+            class="w-full h-[300px] object-cover rounded-default mb-l"
+          />
+        )
+      }
+      <Heading as="h1" variant="h2">
+        {post.data.title}
+      </Heading>
+      <time 
+        datetime={post.data.date.toISOString()}
+        class="text-neutral07 block mt-4"
+      >
+        {new Date(post.data.date).toLocaleDateString('es-ES', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </time>
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .prose {
+    max-width: 100%;
+    color: theme(colors.main09);
+  }
+  .prose :global(p) {
+    margin-bottom: 1.5em;
+    line-height: 1.75;
+  }
+  .prose :global(h2) {
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 700;
+  }
+  .prose :global(h3) {
+    font-size: 1.25em;
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    font-weight: 700;
+  }
+  .prose :global(ul) {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+    list-style-type: disc;
+  }
+  .prose :global(ol) {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+    list-style-type: decimal;
+  }
+  .prose :global(li) {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  .prose :global(a) {
+    color: theme(colors.action05);
+    text-decoration: underline;
+  }
+  .prose :global(blockquote) {
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    padding-left: 1em;
+    border-left: 0.25em solid theme(colors.neutral04);
+    font-style: italic;
+  }
+</style>
