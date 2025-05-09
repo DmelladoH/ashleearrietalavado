@@ -8,8 +8,18 @@ const { class: className, ...props } = Astro.params as Props;
 ---
 
 <p
-  class={cn('text-pretty text-body leading-body font-normal', className)}
+  class={cn(
+    'marginBlock text-pretty text-body leading-body font-normal m',
+    className
+  )}
   {...props}
 >
   <slot />
 </p>
+
+<style is:inline>
+  .marginBlock {
+    margin-block: 1em;
+    margin-block: 1lh;
+  }
+</style>
