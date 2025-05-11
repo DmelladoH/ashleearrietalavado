@@ -24,3 +24,17 @@ export interface Service {
   details: string[];
   summaryDetails: string[];
 }
+
+export interface BlogPost {
+  title: string;
+  date: string;
+  summary: string;
+  thumbnail: string;
+}
+
+export interface Thumbnail {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+}

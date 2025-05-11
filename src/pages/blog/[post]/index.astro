@@ -1,0 +1,76 @@
+---
+import Heading from '@components/ui/heading.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from 'src/layouts/Layout.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post: any) => ({
+    params: { post: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as Props;
+const { Content } = await render(post);
+const { title, thumbnail, date } = post.data;
+
+const formattedDate = new Intl.DateTimeFormat('es-ES', {
+  dateStyle: 'medium',
+}).format(new Date(date));
+---
+
+<Layout title={title}>
+  <div
+    class="desktop:py-xxxl desktop:px-xxxl grid desktop:grid-flow-col desktop:gap-xl desktop:justify-center"
+  >
+    <div
+      class="grid gap-xs desktop:gap-s px-l desktop:px-0 desktop:max-w-[630px] py-xxxl desktop:py-0"
+    >
+      <img src={thumbnail.src} alt="" height="270" />
+      <Heading>{title}</Heading>
+      <p>
+        {formattedDate}
+      </p>
+      <section class="markdown-content h-min p-5">
+        <Content />
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style is:inline>
+  .markdown-content h1 {
+    font-size: 3rem;
+    line-height: 3.6rem;
+    font-weight: 700;
+  }
+
+  .markdown-content h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+  }
+  .markdown-content h3 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 700;
+  }
+
+  .markdown-content h4 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+  }
+  .markdown-content p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+
+    margin-block: 1em;
+    margin-block: 1lh;
+  }
+</style>

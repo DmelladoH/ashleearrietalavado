@@ -4,6 +4,7 @@ import Heading from '@components/ui/heading.astro';
 import Contact from '@sections/contact.astro';
 import { therapies } from '@content/therapies';
 import Layout from 'src/layouts/Layout.astro';
+import Gallery from '@components/ui/gallery.astro';
 ---
 
 <Layout>
@@ -24,7 +25,7 @@ import Layout from 'src/layouts/Layout.astro';
     class="px-l py-xl desktop:px-xxxl desktop:py-xxl flex justify-center"
   >
     <div class="desktop:max-w-[1200px]">
-      <ul class="gallery desktop:gap-y-[112px] gap-s">
+      <Gallery>
         {
           therapies.map(card => (
             <li>
@@ -32,7 +33,7 @@ import Layout from 'src/layouts/Layout.astro';
             </li>
           ))
         }
-      </ul>
+      </Gallery>
     </div>
   </section>
   <Contact
@@ -40,13 +41,3 @@ import Layout from 'src/layouts/Layout.astro';
     text="Si tienes dudas o no sabes por dónde empezar, hablemos y encontremos juntos la mejor opción para ti."
   />
 </Layout>
-
-<style>
-  .gallery {
-    display: grid;
-    grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fill, minmax(327px, 1fr));
-    justify-items: center;
-    align-items: start;
-  }
-</style>

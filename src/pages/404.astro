@@ -1,0 +1,24 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+
+const isAnEmptyPost = Astro.url.pathname.includes('blog');
+---
+
+<Layout>
+  <div class="py-xxxl px-l grid gap-s align-middle justify-center h-full">
+    <span>
+      {
+        isAnEmptyPost
+          ? 'Este post no existe.'
+          : 'La página que estás buscando no existe.'
+      }
+    </span>
+    {
+      isAnEmptyPost ? (
+        <a href="/blog">Ver blog</a>
+      ) : (
+        <a href="/">Volver a la página principal</a>
+      )
+    }
+  </div>
+</Layout>

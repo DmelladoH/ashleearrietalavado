@@ -1,11 +1,11 @@
 ---
 import Clock from '@icons/clock.astro';
 
-interface Props {
-  timeInMinutes: number;
-}
+// interface Props {
+//   timeInMinutes: number;
+// }
 
-const { timeInMinutes } = Astro.props as Props;
+// const { timeInMinutes } = Astro.props as Props;
 ---
 
 <div class="flex gap-xxs">
@@ -13,6 +13,7 @@ const { timeInMinutes } = Astro.props as Props;
     <Clock />
   </div>
   <p class="text-info font-light">
-    <span class="text-h4 font-medium text-main09">{timeInMinutes}</span> min
+    <!-- <span class="text-h4 font-medium text-main09">{timeInMinutes}</span> min -->
+    <slot />
   </p>
 </div>
