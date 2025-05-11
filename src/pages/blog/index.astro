@@ -30,13 +30,13 @@ const posts = await getCollection('blog');
         posts.length > 0 ? (
           <div class="desktop:max-w-[1200px] w-full">
             <Gallery>
-              {posts.map((post: any) => (
+              {posts.map(post => (
                 <li>
-                  <a href={`/blog/${post.id}`}>
+                  <a href={`/blog/${post.slug}`}>
                     <BlogCard
                       title={post.data.title}
                       date={post.data.date}
-                      summary={post.data.summary}
+                      summary={post.data.summery}
                       thumbnail={post.data.thumbnail}
                     />
                   </a>

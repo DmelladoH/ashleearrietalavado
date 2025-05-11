@@ -18,15 +18,19 @@ const formattedDate = new Intl.DateTimeFormat('es-ES', {
 
 <article class="grid gap-s transition-all duration-500 hover:scale-105">
   <header>
-    <img src={thumbnail.src} alt="" width="350" height="270" />
+    <img 
+      src={thumbnail.src} 
+      alt="" 
+      width="350" 
+      height="270" 
+      class="w-full h-[270px] object-cover rounded-default"
+    />
   </header>
-  <div>
-    <Heading variant="h3" as="h4">{title}</Heading>
-    <div>
-      <p>
-        {formattedDate}
-      </p>
-    </div>
-    <p>{summary}</p>
+  <div class="grid gap-2">
+    <Heading variant="h3" as="h2" class="line-clamp-2">{title}</Heading>
+    <time datetime={date} class="text-neutral07 text-info">
+      {formattedDate}
+    </time>
+    <p class="text-neutral08 line-clamp-3">{summary}</p>
   </div>
 </article>
