@@ -1,9 +1,15 @@
 ---
 import Heading from '@components/ui/heading.astro';
+import SimpleLogo from '@icons/simpleLogo.astro';
 
 ---
 
-<div class="text-center py-xl">
-  <Heading as="h2" variant="h3">Aún no hay artículos publicados</Heading>
-  <p class="mt-4 text-neutral07">Vuelve pronto para leer nuevo contenido</p>
+<div class="flex flex-col items-center justify-center py-xxxl px-l text-center">
+  <div class="w-[120px] h-[120px] mb-xl opacity-20">
+    <SimpleLogo />
+  </div>
+  <Heading as="h2" variant="h3" class="mb-s">Próximamente nuevo contenido</Heading>
+  <p class="text-neutral07 max-w-[500px]">
+    Estoy preparando artículos interesantes sobre psicología, bienestar emocional y desarrollo personal. ¡Vuelve pronto para descubrir nuevo contenido que te ayudará en tu camino de crecimiento!
+  </p>
 </div>
