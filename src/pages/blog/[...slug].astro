@@ -13,20 +13,44 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+const shareUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const shareText = `Lee "${post.data.title}" en el blog de Ashlee Arrieta Lavado`;
+
+const shareLinks = [
+  {
+    name: 'Twitter',
+    url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+    icon: '/social/twitter.svg'
+  },
+  {
+    name: 'Facebook',
+    url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+    icon: '/social/facebook.svg'
+  },
+  {
+    name: 'LinkedIn',
+    url: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(post.data.title)}`,
+    icon: '/social/linkedin.svg'
+  },
+  {
+    name: 'WhatsApp',
+    url: `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`,
+    icon: '/social/whatsapp.svg'
+  }
+];
 ---
 
 <Layout>
   <article class="max-w-[800px] mx-auto px-l py-xxxl">
     <header class="mb-xl">
-      {
-        post.data.thumbnail && (
-          <img
-            src={post.data.thumbnail.src}
-            alt=""
-            class="w-full h-[300px] object-cover rounded-default mb-l"
-          />
-        )
-      }
+      {post.data.thumbnail && (
+        <img
+          src={post.data.thumbnail.src}
+          alt=""
+          class="w-full h-[300px] object-cover rounded-default mb-l"
+        />
+      )}
       <Heading as="h1" variant="h2">
         {post.data.title}
       </Heading>
@@ -41,9 +65,35 @@ const { Content } = await post.render();
         })}
       </time>
     </header>
+
     <div class="prose">
       <Content />
     </div>
+
+    <footer class="mt-xl pt-l border-t border-neutral03">
+      <div class="flex flex-col items-center gap-s">
+        <p class="text-neutral07">Comparte este artículo</p>
+        <ul class="flex gap-s">
+          {shareLinks.map(link => (
+            <li>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block p-s hover:bg-neutral02 rounded-default transition-colors"
+                aria-label={`Compartir en ${link.name}`}
+              >
+                <img src={link.icon} alt="" width="24" height="24" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <nav class="mt-xl">
+        <a href="/blog" class="text-action05 hover:underline">← Volver al blog</a>
+      </nav>
+    </footer>
   </article>
 </Layout>
 
