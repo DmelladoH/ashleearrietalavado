@@ -16,6 +16,6 @@ const { title, price, disclaimer, timeInMinutes } = Astro.props;
   <p class="text-info font-bold leading-info">{title}</p>
   <div class="flex gap-s align-middle items-center">
     {price ? <Badge price={price} disclaimer={disclaimer} /> : null}
-    <TimeDisplay timeInMinutes={timeInMinutes} />
+    <TimeDisplay>{timeInMinutes}</TimeDisplay>
   </div>
 </div>
