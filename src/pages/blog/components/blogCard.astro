@@ -12,9 +12,10 @@ interface Props {
 
 const { id, title, date, summary, thumbnail } = Astro.props;
 
-const formattedDate = new Intl.DateTimeFormat('es-ES', {
-  dateStyle: 'medium',
-}).format(new Date(date));
+const rawDate = new Date(date);
+const formattedDate = !isNaN(rawDate.getTime())
+  ? new Intl.DateTimeFormat('es-ES', { dateStyle: 'medium' }).format(rawDate)
+  : '';
 ---
 
 <article class="grid gap-s transition-all duration-500 hover:scale-105">
