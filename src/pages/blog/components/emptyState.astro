@@ -1,3 +1,20 @@
-<div>
-  <p>Aún no hay posts</p>
+---
+import Heading from '@components/ui/heading.astro';
+import SimpleLogo from '@icons/simpleLogo.astro';
+---
+
+<div class="flex flex-col items-center justify-center py-xxxl px-l text-center">
+  <div
+    class="w-[120px] h-[120px] mb-xl opacity-20 flex justify-center align-middle"
+  >
+    <SimpleLogo />
+  </div>
+  <Heading as="h2" variant="h3" class="mb-s"
+    >Próximamente nuevo contenido</Heading
+  >
+  <p class="text-neutral07 max-w-[500px] mt-3">
+    Estoy preparando artículos interesantes sobre psicología, bienestar
+    emocional y desarrollo personal. ¡Vuelve pronto para descubrir nuevo
+    contenido que te ayudará en tu camino de crecimiento!
+  </p>
 </div>

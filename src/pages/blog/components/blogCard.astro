@@ -1,0 +1,47 @@
+---
+import Heading from '@components/ui/heading.astro';
+import type { Thumbnail } from 'src/types';
+
+interface Props {
+  id: string;
+  title: string;
+  date: string;
+  summary: string;
+  thumbnail: Thumbnail;
+}
+
+const { id, title, date, summary, thumbnail } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat('es-ES', {
+  dateStyle: 'medium',
+}).format(new Date(date));
+---
+
+<article class="grid gap-s transition-all duration-500 hover:scale-105">
+  <header>
+    <img
+      src={thumbnail.src}
+      alt=""
+      width="350"
+      height="270"
+      transition:name={`post-thumbnail-${id}`}
+      class="w-full h-[270px] object-cover rounded-default"
+    />
+  </header>
+  <div class="grid gap-2">
+    <Heading
+      variant="h3"
+      as="h2"
+      class="line-clamp-2"
+      transition:name={`post-title-${id}`}>{title}</Heading
+    >
+    <time
+      datetime={date}
+      class="text-neutral07 text-info"
+      transition:name={`post-date-${id}`}
+    >
+      {formattedDate}
+    </time>
+    <p class="text-neutral08 line-clamp-3">{summary}</p>
+  </div>
+</article>

@@ -1,6 +1,7 @@
 ---
 import Heading from '@components/ui/heading.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BlogLayout from 'src/layouts/BlogLayout.astro';
 import Layout from 'src/layouts/Layout.astro';
 
 interface Props {
@@ -24,46 +25,65 @@ const formattedDate = new Intl.DateTimeFormat('es-ES', {
 ---
 
 <Layout title={title}>
-  <div
-    class="desktop:py-xxxl desktop:px-xxxl grid desktop:grid-flow-col desktop:gap-xl desktop:justify-center"
-  >
+  <BlogLayout>
     <div
-      class="grid gap-xs desktop:gap-s px-l desktop:px-0 desktop:max-w-[630px] py-xxxl desktop:py-0"
+      class="py-xl desktop:py-xxxl desktop:px-xxxl grid desktop:grid-flow-col desktop:gap-xl desktop:justify-center"
     >
-      <img src={thumbnail.src} alt="" height="270" />
-      <Heading>{title}</Heading>
-      <p>
-        {formattedDate}
-      </p>
-      <section class="markdown-content h-min p-5">
-        <Content />
-      </section>
+      <div
+        class="grid gap-xs desktop:gap-s px-l desktop:px-0 desktop:max-w-[630px] desktop:py-0"
+      >
+        <img
+          src={thumbnail.src}
+          alt=""
+          height="270"
+          class="w-full h-[370px] object-cover rounded-default"
+          transition:name={`post-thumbnail-${post.id}`}
+        />
+        <Heading as="h1" variant="h2" transition:name={`post-title-${post.id}`}
+          >{title}</Heading
+        >
+        <time
+          datetime={formattedDate}
+          class="text-neutral07 text-info"
+          transition:name={`post-date-${post.id}`}
+        >
+          {formattedDate}
+        </time>
+
+        <section class="markdown-content h-min p-5 mt-10">
+          <Content />
+        </section>
+      </div>
     </div>
-  </div>
+  </BlogLayout>
 </Layout>
 
 <style is:inline>
   .markdown-content h1 {
-    font-size: 3rem;
-    line-height: 3.6rem;
-    font-weight: 700;
-  }
-
-  .markdown-content h2 {
     font-size: 2rem;
     line-height: 2.4rem;
     font-weight: 700;
+    margin: 1em 0;
   }
-  .markdown-content h3 {
+
+  .markdown-content h2 {
     font-size: 1.5rem;
     line-height: 1.8rem;
     font-weight: 700;
+    margin: 1em 0;
+  }
+  .markdown-content h3 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    margin: 1em 0;
   }
 
   .markdown-content h4 {
     font-size: 1.25rem;
     line-height: 1.5rem;
     font-weight: 700;
+    margin: 1em 0;
   }
   .markdown-content p {
     font-size: 1rem;
