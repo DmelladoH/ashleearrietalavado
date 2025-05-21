@@ -8,6 +8,9 @@ import BlogCard from './components/blogCard.astro';
 import BlogLayout from 'src/layouts/BlogLayout.astro';
 
 const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
 ---
 
 <Layout title="Blog">
@@ -29,10 +32,10 @@ const posts = await getCollection('blog');
         class="px-l py-xl desktop:px-xxxl desktop:py-xxl flex justify-center"
       >
         {
-          posts.length > 0 ? (
+          sortedPosts.length > 0 ? (
             <div class="desktop:max-w-[1200px] w-full">
               <Gallery>
-                {posts.map((post: any) => (
+                {sortedPosts.map((post: any) => (
                   <li>
                     <a href={`/blog/${post.id}`}>
                       <BlogCard
