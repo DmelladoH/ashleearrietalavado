@@ -59,6 +59,18 @@ const formattedDate = new Intl.DateTimeFormat('es-ES', {
 </Layout>
 
 <style is:inline>
+  ul,
+  ol {
+    padding-left: 20px;
+    margin: 1em 0;
+  }
+  ul {
+    list-style: circle;
+  }
+
+  ol {
+    list-style: decimal;
+  }
   .markdown-content h1 {
     font-size: 2rem;
     line-height: 2.4rem;
