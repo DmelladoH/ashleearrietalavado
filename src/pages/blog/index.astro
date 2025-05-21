@@ -42,7 +42,6 @@ const posts = await getCollection('blog');
                         summary={post.data.summary}
                         thumbnail={post.data.thumbnail}
                       />
-<<<<<<< HEAD
                     </a>
                   </li>
                 ))}
@@ -53,31 +52,6 @@ const posts = await getCollection('blog');
           )
         }
       </section>
-=======
-                    )}
-                    <div class="p-l">
-                      <Heading as="h2" variant="h3">
-                        {post.data.title}
-                      </Heading>
-                     
-                    </div>
-                  </article>
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <div class="text-center py-xxl">
-            <Heading as="h2" variant="h3" class="mb-4">
-              No hay artículos disponibles
-            </Heading>
-            <p class="text-neutral07">
-              Pronto publicaremos nuevo contenido. ¡Vuelve más tarde!
-            </p>
-          </div>
-        )
-      }
->>>>>>> 1e142ae (Create blog section with gallery, empty state and 404)
     </div>
   </BlogLayout>
 </Layout>
