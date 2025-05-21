@@ -12,21 +12,21 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.2",
-    "astro": "^5.6.1",
+    "astro": "^5.7.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "decap-cms-app": "^3.6.2",
+    "decap-cms-app": "^3.6.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "sharp": "^0.32.6",
-    "swiper": "^11.1.15",
-    "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^3.4.15"
+    "swiper": "^11.2.7",
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
-    "eslint": "^9.16.0",
-    "globals": "^15.13.0",
-    "prettier": "^3.4.1",
+    "@eslint/js": "^9.27.0",
+    "eslint": "^9.27.0",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1"
   }
 }
