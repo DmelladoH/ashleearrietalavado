@@ -31,4 +31,4 @@ Comparto contigo un meme que nos sirve como excusa para seguir aprendiendo sobre
 
 
 
-![prueba](src/assets/blog/internal-family-systems-ifs-1-930x620.png "prueba titulo")
+![prueba](src/assets/blog/internal-family-systems-ifs-1-930x620.png "prueba titulo 2")
