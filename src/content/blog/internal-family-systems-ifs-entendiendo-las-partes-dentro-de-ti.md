@@ -21,14 +21,14 @@ Este modelo se asemeja a una **familia**, donde estas partes pueden tener confl
 
 Cada uno de nosotros alberga una diversidad de partes que han desarrollado diferentes estrategias de afrontamiento a lo largo de nuestra vida. Por ejemplo, algunas partes pueden ser protectoras, buscando resguardar a nuestro yo de experiencias dolorosas, mientras que otras pueden permanecer en la sombra, cargando traumas y heridas emocionales. Al comprender y dar voz a estas partes, IFS nos brinda la oportunidad de crear un diálogo interno más saludable y compasivo.
 
-
-
 ## 2. ¿Cuál es el origen de Internal Family Systems (IFS)?
 
 El enfoque de Internal Family Systems (IFS) fue desarrollado por el psicólogo Richard Schwartz en la década de 1980. Su creación surgió de la observación de cómo las personas tienden a hablar de sus problemas emocionales en términos de “partes” de sí mismas. Durante sus sesiones, Schwartz se dio cuenta de que muchos pacientes se referían a sus emociones y comportamientos como si fueran entidades separadas, como si tuvieran diferentes voces o perspectivas internas. Esta revelación lo llevó a profundizar en la dinámica de estas «partes», lo que resultó en la formulación del modelo IFS.
 
-
-
 El IFS no solo transformó la terapia individual, sino que también ofreció un nuevo marco para entender la experiencia humana. Este enfoque se alinea con conceptos de la terapia familiar y la psicología sistémica, donde cada parte del individuo puede ser vista como un miembro de una familia interna que interactúa con las demás. En este contexto, las partes no son consideradas disfuncionales; en cambio, se les reconoce como adaptaciones a experiencias pasadas. Por ejemplo, una parte que se comporta de manera crítica puede estar intentando proteger a otra parte vulnerable de experiencias dolorosas. De esta forma, el IFS permite una comprensión más profunda y compasiva de nuestro propio funcionamiento interno, facilitando así el proceso de sanación y autoconocimiento.
 
 Comparto contigo un meme que nos sirve como excusa para seguir aprendiendo sobre IFS.
+
+
+
+![prueba](src/assets/blog/internal-family-systems-ifs-1-930x620.png "prueba titulo")
