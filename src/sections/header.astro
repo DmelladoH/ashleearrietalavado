@@ -59,7 +59,7 @@ const links = [
     data-visible="false"
   >
     <nav aria-label="Navegación principal">
-      <ul>
+      <ul class="resetList">
         {
           links.map(link => (
             <li
@@ -163,6 +163,11 @@ const links = [
     white-space: nowrap;
   }
 
+  .resetList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
   @media (max-width: 1000px) {
     .primary-nav {
       position: fixed;

@@ -1,0 +1,21 @@
+---
+import Heading from '@components/ui/heading.astro';
+---
+
+<html lang="es">
+  <body>
+    <section class="bg-neutral02 py-xxl px-l grid gap-s">
+      <Heading
+        as="h1"
+        variant="h2"
+        class="text-h2 font-bold leading-h2 text-center"
+      >
+        Blog
+      </Heading>
+      <p class="leading-body text-center">
+        Artículos sobre psicología, bienestar emocional y desarrollo personal
+      </p>
+    </section>
+    <slot />
+  </body>
+</html>

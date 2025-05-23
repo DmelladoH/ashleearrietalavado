@@ -1,24 +1,36 @@
 ---
 import Layout from 'src/layouts/Layout.astro';
+import BlogLayout from './blog/layouts/blogLayout.astro';
 
 const isAnEmptyPost = Astro.url.pathname.includes('blog');
 ---
 
 <Layout>
-  <div class="py-xxxl px-l grid gap-s align-middle justify-center h-full">
-    <span>
-      {
-        isAnEmptyPost
-          ? 'Este post no existe.'
-          : 'La página que estás buscando no existe.'
-      }
-    </span>
-    {
-      isAnEmptyPost ? (
-        <a href="/blog">Ver blog</a>
-      ) : (
-        <a href="/">Volver a la página principal</a>
-      )
-    }
-  </div>
+  {
+    isAnEmptyPost ? (
+      <BlogLayout>
+        <div class="py-xxxl px-l grid gap-s align-middle justify-center h-full">
+          <span class="text-center text-h1">404</span>
+          <p>No existe el post</p>
+          <a
+            href="/blog"
+            class="underline underline-offset-4 text-action font-medium hover:opacity-70"
+          >
+            Ver otros posts
+          </a>
+        </div>
+      </BlogLayout>
+    ) : (
+      <div class="py-xxxl px-l grid gap-s align-middle justify-center h-full justify-items-center ">
+        <span class="text-center text-h1">404</span>
+        <p>La página que estás buscando no existe</p>
+        <a
+          href="/"
+          class="underline underline-offset-4 text-action font-medium hover:opacity-70"
+        >
+          Volver a la página principal
+        </a>
+      </div>
+    )
+  }
 </Layout>

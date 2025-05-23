@@ -25,12 +25,14 @@ import GoogleAnalytics from '@components/googleAnalytics.astro';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
-  <body class="bg-white text-main09">
+  <body class="bg-white text-main09 min-h-screen">
     <Header />
-    <main class="pt-xxxl">
-      <slot />
-    </main>
-    <Footer />
+    <div class="h-full">
+      <main class="pt-xxxl">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
 

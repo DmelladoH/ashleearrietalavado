@@ -1,11 +1,11 @@
 ---
 import Gallery from '@components/ui/gallery.astro';
-import Heading from '@components/ui/heading.astro';
 import { getCollection } from 'astro:content';
 import Layout from 'src/layouts/Layout.astro';
 import EmptyState from './components/emptyState.astro';
 import BlogCard from './components/blogCard.astro';
-import BlogLayout from 'src/layouts/BlogLayout.astro';
+import BlogLayout from './layouts/blogLayout.astro';
+import ViewLayout from './layouts/viewLayout.astro';
 
 const posts = await getCollection('blog');
 const sortedPosts = posts.sort((a, b) => {
@@ -14,20 +14,8 @@ const sortedPosts = posts.sort((a, b) => {
 ---
 
 <Layout title="Blog">
-  <BlogLayout>
-    <div>
-      <section class="bg-neutral02 py-xxl px-l grid gap-s">
-        <Heading
-          as="h1"
-          variant="h2"
-          class="text-h2 font-bold leading-h2 text-center"
-        >
-          Blog
-        </Heading>
-        <p class="leading-body text-center">
-          Artículos sobre psicología, bienestar emocional y desarrollo personal
-        </p>
-      </section>
+  <ViewLayout>
+    <BlogLayout>
       <section
         class="px-l py-xl desktop:px-xxxl desktop:py-xxl flex justify-center"
       >
@@ -55,6 +43,6 @@ const sortedPosts = posts.sort((a, b) => {
           )
         }
       </section>
-    </div>
-  </BlogLayout>
+    </BlogLayout>
+  </ViewLayout>
 </Layout>

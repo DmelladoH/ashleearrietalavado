@@ -1,8 +1,8 @@
 ---
 import Heading from '@components/ui/heading.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-import BlogLayout from 'src/layouts/BlogLayout.astro';
 import Layout from 'src/layouts/Layout.astro';
+import ViewLayout from '../layouts/ViewLayout.astro';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -25,7 +25,7 @@ const formattedDate = new Intl.DateTimeFormat('es-ES', {
 ---
 
 <Layout title={title}>
-  <BlogLayout>
+  <ViewLayout>
     <div
       class="py-xl desktop:py-xxxl desktop:px-xxxl grid desktop:grid-flow-col desktop:gap-xl desktop:justify-center"
     >
@@ -55,7 +55,7 @@ const formattedDate = new Intl.DateTimeFormat('es-ES', {
         </section>
       </div>
     </div>
-  </BlogLayout>
+  </ViewLayout>
 </Layout>
 
 <style is:inline>
