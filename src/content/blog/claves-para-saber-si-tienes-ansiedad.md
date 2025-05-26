@@ -1,6 +1,6 @@
 ---
 title: Claves para saber si tienes ansiedad
-date: 2025-05-19T12:36:00.000Z
+date: 2025-05-26T12:36:00.000Z
 thumbnail: src/assets/blog/captura-de-pantalla-2025-05-19-a-las-12.35.44.png
 summery: Seguramente en algún momento de tu vida has sentido nervios,
   preocupación o tensión en situaciones estresantes. Todos los seres humanos
