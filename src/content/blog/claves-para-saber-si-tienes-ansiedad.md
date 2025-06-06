@@ -12,8 +12,6 @@ summery: Seguramente en algún momento de tu vida has sentido nervios,
   sientes es funcional o disfuncional y sobre todo, qué puedes hacer al
   respecto.
 ---
-
-
 **¿Qué es la ansiedad?** 
 
 La ansiedad es una respuesta natural ante una amenaza, puede ser a una persona, animal, objeto o situación. Se trata de una reacción normal que todos experimentamos. Por ejemplo: antes de tener un examen importante, cuando tenemos que hablar en público, en una entrevista de trabajo, etc.
@@ -26,7 +24,7 @@ Si no existiese ese mínimo de activación que nos da la ansiedad un estudiante 
 
 A continuación voy a poner algunos ejemplos, pero es importante tener en cuenta que existen otros síntomas. Asimismo, es importante pedir ayuda profesional, ya que no todas las personas experimentan los mismos síntomas.
 
-1. **Síntomas físicos**
+**1. Síntomas físicos**
 
 * Palpitaciones. 
 * Opresión en el pecho o dificultad para respirar.
@@ -35,7 +33,7 @@ A continuación voy a poner algunos ejemplos, pero es importante tener en cuenta
 * Sudoración.
 * Despertarte sin energía y sentir fatiga pese a haber dormido aparentemente bien.
 
-1. **Síntomas emocionales**
+**2. Síntomas emocionales**
 
 * Preocupación excesiva.
 * Pensamiento catastrofista.
@@ -44,7 +42,7 @@ A continuación voy a poner algunos ejemplos, pero es importante tener en cuenta
 * Irritabilidad.
 * Pensamientos repetitivos. Aparece la llamada rumiación.
 
-1. **Cambios en el comportamiento**
+**3. Cambios en el comportamiento**
 
 * Aislamiento social.
 * Cambios en el sueño, por ejemplo no poder conciliarlo, despertares constantes o insomnio.
