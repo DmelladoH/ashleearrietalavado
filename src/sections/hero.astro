@@ -11,28 +11,31 @@ import Heading from '@components/ui/heading.astro';
     class="grid desktop:grid-flow-col desktop:gap-xl desktop:py-xxxl desktop:max-w-[1182px]"
   >
     <div class="grid gap-xs desktop:gap-s px-l max-w-[752px] pb-l pt-xl">
-      <Heading as="h1"
+      <Heading as="h1" class="uppercase"
         >Conoce el Centro de Psicología Ashlee Arrieta Lavado</Heading
       >
       <Heading
-        as="h3"
-        class="text-h4 desktop:text-h3 font-bold leading-h4 desktop:leading-h3"
+        as="h2"
+        class="text-h3 desktop:text-h2 font-bold leading-h3 desktop:leading-h2"
       >
-        ¿Estás pasando por un momento difícil en tu vida?
+        Psicóloga especializada en Ansiedad y <span class="capitalize"
+          >depresión</span
+        >
       </Heading>
       <Heading
         as="h3"
-        class="text-h4 desktop:text-h3 font-bold leading-h4 desktop:leading-h3"
+        class="uppercase text-h4 font-normal desktop:text-h4 leading-h4 desktop:leading-h4"
       >
-        Si no sabes ponerle nombre a lo que te ocurre, podemos buscar una
-        solución en conjunto.
+        Terapia presencial en Bilbao y Terapia online
       </Heading>
       <p class="text-body font-normal leading-body">
         Un espacio seguro y acogedor donde encontrarás la empatía y comprensión
         que necesitas durante tú proceso de crecimiento vital.
       </p>
-      <div class="mt-8 max-w-[160px]">
-        <WhatsappContactButton />
+      <div class="mt-8 w-fit">
+        <WhatsappContactButton
+          text="Reserva tu llamada de valoración gratuita"
+        />
       </div>
     </div>
     <ResponsiveImage

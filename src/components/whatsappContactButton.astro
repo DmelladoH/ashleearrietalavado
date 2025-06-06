@@ -4,11 +4,17 @@ import { personalData } from '@content/personalData';
 import Button from './ui/button.astro';
 
 const whatsAppLink = `https://wa.me/${personalData.countryPhoneCode}${personalData.phone.replace(/\s+/g, '')}`;
+const { text = 'Contacta' } = Astro.props;
 ---
 
-<Button variant="primary" href={whatsAppLink} target="_blank">
+<Button
+  variant="primary"
+  href={whatsAppLink}
+  target="_blank"
+  class="flex items-center"
+>
   <div class="w-6 h-6">
     <WhatsApp />
   </div>
-  <span class="font-medium">Contactar</span>
+  <span class="font-medium">{text}</span>
 </Button>

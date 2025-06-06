@@ -14,8 +14,10 @@ const { title, text } = Astro.props;
       {text}
     </p>
     <div class="flex justify-center">
-      <div class="w-full desktop:max-w-[160px]">
-        <WhatsappContactButton />
+      <div class="w-fit">
+        <WhatsappContactButton
+          text="Reserva tu llamada de valoración gratuita"
+        />
       </div>
     </div>
   </div>
