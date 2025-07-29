@@ -1,5 +1,5 @@
 ---
-title: ¿Qué puedo hacer si tengo un “ataque de ansiedad”?
+title: ¿Qué puedo hacer si tengo un ataque de ansiedad?
 date: 2025-07-29T10:43:00.000+02:00
 thumbnail: src/assets/blog/woman-suffering-panic-attack-holds-600nw-2430241069.jpg.webp
 summery: "Puede que alguna vez hayas sentido que el corazón se te acelera, que
