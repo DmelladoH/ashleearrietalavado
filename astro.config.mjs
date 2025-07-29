@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
@@ -13,4 +13,7 @@ export default defineConfig({
       filter: page => page !== 'https://www.ashleearrietalavado.com/admin/',
     }),
   ],
+  image: {
+    service: passthroughImageService(),
+  },
 });
