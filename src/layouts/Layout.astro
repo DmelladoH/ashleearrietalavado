@@ -8,6 +8,7 @@ import { ClientRouter } from 'astro:transitions';
 const { title, description, canonical, image } = siteData;
 
 import GoogleAnalytics from '@components/googleAnalytics.astro';
+import BodyScripts from '@components/bodyScripts.astro';
 ---
 
 <!doctype html>
@@ -19,22 +20,14 @@ import GoogleAnalytics from '@components/googleAnalytics.astro';
       canonical={canonical}
       image={image}
     />
-    <GoogleAnalytics />
     <ClientRouter />
     <!--Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <GoogleAnalytics />
   </head>
   <body class="bg-white text-main09 min-h-screen">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-WL27P2KZ"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe></noscript
-    >
-    <!-- End Google Tag Manager (noscript) -->
+    <BodyScripts />
     <Header />
     <div class="h-full">
       <main class="pt-xxxl">
