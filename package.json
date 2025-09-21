@@ -11,9 +11,9 @@
     "prettier:fix": "npm run prettier -- --write"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
-    "astro": "^5.12.5",
+    "astro": "^5.13.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "decap-cms-app": "^3.8.2",
