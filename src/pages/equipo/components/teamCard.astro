@@ -1,6 +1,5 @@
 ---
 import Heading from '@components/ui/heading.astro';
-import ResponsiveImage from '@components/ui/responsiveImage.astro';
 import { getImage } from 'astro:assets';
 
 interface TeamCardProps {
@@ -10,12 +9,21 @@ interface TeamCardProps {
 
 const { title, picture } = Astro.props as TeamCardProps;
 
-const desktopImg = await getImage({
-  src: picture,
-  format: 'webp',
-  width: 1248,
-  height: 1274,
-});
+let desktopImg;
+
+try {
+  desktopImg =
+    typeof picture === 'object'
+      ? await getImage({
+          src: picture,
+          format: 'webp',
+          width: 1248,
+          height: 1274,
+        })
+      : null;
+} catch {
+  desktopImg = null;
+}
 ---
 
 <article
@@ -23,9 +31,9 @@ const desktopImg = await getImage({
 >
   <div>
     <img
-      src={desktopImg.src}
-      width="1248"
-      height="1274"
+      src={desktopImg?.src}
+      width="430"
+      height="400"
       class="relative top-0 left-0 right-0 m-0 w-auto rounded-default"
       transition:name={`team ${title} image`}
     />

@@ -35,7 +35,7 @@ const { id, title, price, time, details } =
       <div class="my-6 flex-grow">
         <List>
           {
-            details.map(detail => (
+            (details ?? []).map(detail => (
               <li>
                 <p>{detail}</p>
               </li>
