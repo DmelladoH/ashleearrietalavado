@@ -38,11 +38,16 @@ import Heading from '@components/ui/heading.astro';
         />
       </div>
     </div>
-    <ResponsiveImage
-      firstColor="bg-accent03"
-      secondColor="bg-white"
-      imgDesktop={hero}
-      imgMobile={heroMobil}
-    />
+    <div
+      class="desktop:flex desktop:items-center desktop:justify-center px-l pb-l"
+    >
+      <ResponsiveImage
+        firstColor="bg-accent03"
+        secondColor="bg-white"
+        imgDesktop={hero}
+        imgMobile={heroMobil}
+        height={338}
+      />
+    </div>
   </div>
 </section>

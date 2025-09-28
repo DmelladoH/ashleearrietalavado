@@ -1,0 +1,106 @@
+---
+import Button from '@components/ui/button.astro';
+import Heading from '@components/ui/heading.astro';
+import List from '@components/ui/list.astro';
+import ResponsiveImage from '@components/ui/responsiveImage.astro';
+import Text from '@components/ui/text.astro';
+import Linkedn from '@icons/linkedn.astro';
+import Layout from '@layouts/Layout.astro';
+import picture from '@pictures/team/maite-santiago.jpeg';
+
+const experience = [
+  'Psicología (Universidad de Deusto)',
+  'Máster propio en actualización en intervención psicológica y salud mental (UDIMA)',
+  'Máster Universitario en Neuropsicología Clínica (VIU)',
+  'Máster de sexología y terapia de pareja (UDIMA)',
+  'Máster Universitario en Psicología General sanitaria (VIU)',
+];
+
+const linkedin = 'https://www.linkedin.com/in/maite-santiago-arrieta-978691231';
+---
+
+<Layout>
+  <section class="bg-accent03 desktop:flex justify-center">
+    <div
+      class="grid desktop:grid-flow-col desktop:gap-xl desktop:py-xxxl desktop:max-w-[1182px] justify-center"
+    >
+      <div class="grid gap-xs desktop:gap-s px-l max-w-[752px] py-xxl">
+        <Heading as="h1" class="uppercase">Maite Santiago</Heading>
+      </div>
+    </div>
+    <ResponsiveImage
+      firstColor="bg-accent03"
+      secondColor="bg-white"
+      imgDesktop={picture}
+      imgMobile={picture}
+      height={338}
+      transitionName={`team Maite Santiago image`}
+      imgClass="rounded-default"
+    />
+  </section>
+
+  <section
+    class="px-l desktop:pb-xxxl desktop:py-xxxl pb-xxl flex justify-center"
+  >
+    <div class="desktop:max-w-[1000px] grid gap-xl">
+      <div class="gap-s flex justify-center">
+        <div class="justify-center grid desktop:grid-flow-col gap-xl">
+          <div class="max-w-[600px]">
+            <Text>
+              Desde pequeña, he tenido claro que mi vocación estaría relacionada
+              con una profesión que me facilitara ayudar a los demás. Es por
+              ello que cuando tuve que escoger qué carrera universitaria
+              estudiar, escogí estudiar Psicología en la Universidad de Deusto.
+            </Text>
+            <Text>
+              Al finalizar la carrera cursé diferentes masters entre los que
+              destaca el Máster en Neuropsicología Clínica, dado mi interés en
+              asignaturas impartidas en la carrera tanto de biología como de
+              neuropsicología. El Máster propio en actualización en intervención
+              psicológica y salud mental, con el fin de adquirir conocimientos
+              para poder abordar en consulta casos clínicos relacionados con
+              temáticas de ansiedad, depresión, duelo, autoexigencia… El Máster
+              en Sexología y Terapia de pareja con el objetivo de poder
+              profundizar en las relaciones humanas y contar con las
+              herramientas necesarias para poder intervenir ante problemas de
+              dicha índole.
+            </Text>
+            <Text>
+              Para finalizar, me gustaría hacer énfasis en que en la actualidad
+              continúo con mi formación ya que considero que en la disciplina de
+              la Psicología es de vital importancia el hecho de estar al día de
+              las nuevas intervenciones con el fin de poder ofrecer el mejor
+              servicio a los pacientes.
+            </Text>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex justify-center pb-xxxl px-l">
+    <div class="max-w-[600px]">
+      <Heading as="h3">Experiencia:</Heading>
+      <List class="mt-6">
+        {
+          experience.map(experience => (
+            <li>
+              <p class="text-bullet leading-bullet">{experience}</p>
+            </li>
+          ))
+        }
+      </List>
+    </div>
+  </section>
+  <section class="flex justify-center gap-s py-l px-l items-center">
+    <div class="border-t-neutral08 h-[1px] border-[1px] w-full"></div>
+    <a
+      href={linkedin}
+      aria-label="perfil de LinkedIn"
+      target="_blank"
+      class="w-8 h-8 flex"
+    >
+      <Linkedn fill="hsla(170, 8%, 32%, 1)" />
+    </a>
+    <div class="border-t-neutral08 h-[1px] border-[1px] w-full"></div>
+  </section>
+</Layout>

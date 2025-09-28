@@ -1,0 +1,34 @@
+---
+import Heading from '@components/ui/heading.astro';
+import ResponsiveImage from '@components/ui/responsiveImage.astro';
+import { getImage } from 'astro:assets';
+
+interface TeamCardProps {
+  title: string;
+  picture: string;
+}
+
+const { title, picture } = Astro.props as TeamCardProps;
+
+const desktopImg = await getImage({
+  src: picture,
+  format: 'webp',
+  width: 1248,
+  height: 1274,
+});
+---
+
+<article
+  class="grid gap-s transition-all duration-500 hover:scale-105 md:max-w-80"
+>
+  <div>
+    <img
+      src={desktopImg.src}
+      width="1248"
+      height="1274"
+      class="relative top-0 left-0 right-0 m-0 w-auto rounded-default"
+      transition:name={`team ${title} image`}
+    />
+  </div>
+  <Heading as="h3" class="text-center">{title}</Heading>
+</article>
