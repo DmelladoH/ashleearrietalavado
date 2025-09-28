@@ -81,11 +81,12 @@ const {
       </summary>
       <List class="mt-6">
         {
-          details.map(detail => (
-            <li>
-              <p>{detail}</p>
-            </li>
-          ))
+          details &&
+            details.map(detail => (
+              <li>
+                <p>{detail}</p>
+              </li>
+            ))
         }
       </List>
     </details>
