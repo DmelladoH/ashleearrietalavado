@@ -9,6 +9,7 @@ const {
   imgMobile,
   alt = '',
   lazy = false,
+  transitionName,
   ...otherProps
 } = Astro.props;
 
@@ -28,7 +29,7 @@ const desktopImg = await getImage({
 ---
 
 <div
-  class={`relative  h-[400px] desktop:w-[400px] ${className || ''}`}
+  class={`relative desktop:flex desktop:items-center h-[400px] desktop:w-[400px] ${className || ''}`}
   {...otherProps}
 >
   <div class={`${firstColor} h-[50%] desktop:hidden`}></div>
@@ -43,6 +44,7 @@ const desktopImg = await getImage({
       height="1474"
       loading={lazy ? 'lazy' : 'eager'}
       class="absolute desktop:relative top-0 left-0 w-full m-auto right-0 desktop:m-0 desktop:w-auto"
+      transition:name={transitionName}
     />
   </picture>
 </div>

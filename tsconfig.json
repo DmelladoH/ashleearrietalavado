@@ -7,9 +7,11 @@
     "paths": {
       "@icons/*": ["src/assets/icons/*"],
       "@pictures/*": ["src/assets/pictures/*"],
-      "@sections/*": ["src/sections/*"],
-      "@components/*": ["src/components/*"],
+      "@sections/*": ["src/shared/sections/*"],
+      "@components/*": ["src/shared/components/*"],
+      "@ui/*": ["src/shared/components/ui/*"],
       "@content/*": ["src/content/*"],
+      "@layouts/*": ["src/layouts/*"],
       "@lib/*": ["src/lib/*"]
     }
   }

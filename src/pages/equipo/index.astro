@@ -1,0 +1,54 @@
+---
+import Heading from '@ui/heading.astro';
+import Layout from '@layouts/Layout.astro';
+import Gallery from '@components/ui/gallery.astro';
+import TeamCard from './components/teamCard.astro';
+import maiteSantiago from '../../assets/pictures/team/maite-santiago.jpeg';
+
+const team = [
+  {
+    title: 'Maite Santiago',
+    picture: maiteSantiago,
+    link: 'equipo/maite-santiago',
+  },
+];
+---
+
+<Layout>
+  <section class="bg-neutral02 py-xxxl px-l grid gap-s justify-center">
+    <div class="desktop:max-w-[1000px] grid gap-s">
+      <Heading
+        as="h1"
+        variant="h2"
+        class="text-h2 font-bold leading-h2 text-center"
+      >
+        Equipo
+      </Heading>
+      <p class="leading-body text-center">
+        En el centro de Psicología Ashlee Arrieta Lavado cada profesional del
+        equipo es una pieza indispensable. Trabajamos con distintos enfoques con
+        la finalidad de adecuarnos lo mejor posible a tus necesidades.
+      </p>
+      <p class="leading-body text-center">
+        Elegimos a cada miembro del equipo para que siga los valores del centro:
+        cercanía, brinde un espacio seguro y libre de juicio, confidencialidad y
+        sobretodo una gran vocación e implicación con cada paciente.
+      </p>
+    </div>
+  </section>
+  <section class="px-l py-xl desktop:px-xxxl desktop:py-xxl flex">
+    <div class="desktop:max-w-[1200px]">
+      <Gallery>
+        {
+          team.map(card => (
+            <li>
+              <a href={card.link}>
+                <TeamCard title={card.title} picture={card.picture} />
+              </a>
+            </li>
+          ))
+        }
+      </Gallery>
+    </div>
+  </section>
+</Layout>

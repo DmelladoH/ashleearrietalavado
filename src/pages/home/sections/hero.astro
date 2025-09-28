@@ -1,5 +1,5 @@
 ---
-import ResponsiveImage from '@components/responsiveImage.astro';
+import ResponsiveImage from '@ui/responsiveImage.astro';
 import WhatsappContactButton from '@components/whatsappContactButton.astro';
 import hero from '@pictures/hero.png';
 import heroMobil from '@pictures/hero-mobile.png';
@@ -38,11 +38,16 @@ import Heading from '@components/ui/heading.astro';
         />
       </div>
     </div>
-    <ResponsiveImage
-      firstColor="bg-accent03"
-      secondColor="bg-white"
-      imgDesktop={hero}
-      imgMobile={heroMobil}
-    />
+    <div
+      class="desktop:flex desktop:items-center desktop:justify-center px-l pb-l"
+    >
+      <ResponsiveImage
+        firstColor="bg-accent03"
+        secondColor="bg-white"
+        imgDesktop={hero}
+        imgMobile={heroMobil}
+        height={338}
+      />
+    </div>
   </div>
 </section>

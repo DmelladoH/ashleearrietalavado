@@ -1,7 +1,7 @@
 ---
 import WhatsApp from '@icons/whatsapp.astro';
 import { personalData } from '@content/personalData';
-import Button from './ui/button.astro';
+import Button from '@ui/button.astro';
 
 const whatsAppLink = `https://wa.me/${personalData.countryPhoneCode}${personalData.phone.replace(/\s+/g, '')}`;
 const { text = 'Contacta' } = Astro.props;
