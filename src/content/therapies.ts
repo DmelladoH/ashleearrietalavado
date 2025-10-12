@@ -120,7 +120,7 @@ export const therapies: Service[] = [
     onlinePrice: 80,
     onlineTimeInMinutes: 60,
     inPersonPrice: 90,
-    inPersonTimeInMinutes: 60,
+    inPersonTimeInMinutes: 80,
     description:
       'Mi objetivo es ayudar a mejorar la calidad de las relaciones de pareja, ahondando en situaciones conflictivas difíciles abordar. Trabajo con ambos para fortalecer su conexión y aumentar la satisfacción.',
     details: [

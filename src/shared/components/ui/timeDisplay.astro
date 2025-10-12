@@ -1,5 +1,18 @@
 ---
 import Clock from '@icons/clock.astro';
+
+const { timeInMinutes } = Astro.props;
+
+const hours = Math.floor(timeInMinutes / 60);
+const minutes = timeInMinutes % 60;
+
+let displayTime;
+
+if (minutes === 0) {
+  displayTime = `${timeInMinutes} min`;
+} else {
+  displayTime = hours > 0 ? `${hours}h ${minutes} min` : `${minutes} min`;
+}
 ---
 
 <div class="flex gap-xxs">
@@ -7,6 +20,6 @@ import Clock from '@icons/clock.astro';
     <Clock />
   </div>
   <p class="text-info font-light">
-    <span class="text-h4 font-medium text-main09"><slot /></span> min
+    <span class="text-h4 font-medium text-main09">{displayTime}</span>
   </p>
 </div>
